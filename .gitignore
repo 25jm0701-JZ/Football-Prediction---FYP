@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+outputs/
+~$*.xlsx
+world_cup/data/raw/international_results.csv
+node_modules/

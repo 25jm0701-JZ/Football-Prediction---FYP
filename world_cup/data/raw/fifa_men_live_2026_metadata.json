@@ -1,0 +1,7 @@
+{
+  "source": "https://api.fifa.com/api/v3/fifarankings/rankings/live?gender=1&sportType=0&count=300&language=en",
+  "retrieved_at_utc": "2026-07-03T02:18:24.923507+00:00",
+  "status": "FIFA live/provisional data; not a published ranking schedule",
+  "latest_published_official_ranking": "2026-04-01",
+  "team_count": 48
+}

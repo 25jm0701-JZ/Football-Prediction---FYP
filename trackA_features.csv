@@ -1,0 +1,72 @@
+track,category,feature_name,data_source
+A,原始比赛统计,home_shots,football-data.co.uk
+A,原始比赛统计,away_shots,football-data.co.uk
+A,原始比赛统计,home_shots_target,football-data.co.uk
+A,原始比赛统计,away_shots_target,football-data.co.uk
+A,原始比赛统计,home_fouls,football-data.co.uk
+A,原始比赛统计,away_fouls,football-data.co.uk
+A,原始比赛统计,home_corners,football-data.co.uk
+A,原始比赛统计,away_corners,football-data.co.uk
+A,原始比赛统计,home_yellow,football-data.co.uk
+A,原始比赛统计,away_yellow,football-data.co.uk
+A,原始比赛统计,home_red,football-data.co.uk
+A,原始比赛统计,away_red,football-data.co.uk
+A,滚动状态-5场,home_avg_goals_for_5,football-data.co.uk
+A,滚动状态-5场,home_avg_goals_against_5,football-data.co.uk
+A,滚动状态-5场,home_avg_goal_diff_5,football-data.co.uk
+A,滚动状态-5场,home_avg_points_5,football-data.co.uk
+A,滚动状态-5场,home_win_rate_5,football-data.co.uk
+A,滚动状态-5场,home_draw_rate_5,football-data.co.uk
+A,滚动状态-5场,home_loss_rate_5,football-data.co.uk
+A,滚动状态-5场,away_avg_goals_for_5,football-data.co.uk
+A,滚动状态-5场,away_avg_goals_against_5,football-data.co.uk
+A,滚动状态-5场,away_avg_goal_diff_5,football-data.co.uk
+A,滚动状态-5场,away_avg_points_5,football-data.co.uk
+A,滚动状态-5场,away_win_rate_5,football-data.co.uk
+A,滚动状态-5场,away_draw_rate_5,football-data.co.uk
+A,滚动状态-5场,away_loss_rate_5,football-data.co.uk
+A,滚动状态-10场,home_avg_goals_for_10,football-data.co.uk
+A,滚动状态-10场,home_avg_goals_against_10,football-data.co.uk
+A,滚动状态-10场,home_avg_goal_diff_10,football-data.co.uk
+A,滚动状态-10场,home_avg_points_10,football-data.co.uk
+A,滚动状态-10场,home_win_rate_10,football-data.co.uk
+A,滚动状态-10场,home_draw_rate_10,football-data.co.uk
+A,滚动状态-10场,home_loss_rate_10,football-data.co.uk
+A,滚动状态-10场,away_avg_goals_for_10,football-data.co.uk
+A,滚动状态-10场,away_avg_goals_against_10,football-data.co.uk
+A,滚动状态-10场,away_avg_goal_diff_10,football-data.co.uk
+A,滚动状态-10场,away_avg_points_10,football-data.co.uk
+A,滚动状态-10场,away_win_rate_10,football-data.co.uk
+A,滚动状态-10场,away_draw_rate_10,football-data.co.uk
+A,滚动状态-10场,away_loss_rate_10,football-data.co.uk
+A,射门数据-5场,home_avg_shots_5,football-data.co.uk
+A,射门数据-5场,home_avg_sot_5,football-data.co.uk
+A,射门数据-5场,home_shot_accuracy_5,football-data.co.uk
+A,射门数据-5场,home_conversion_rate_5,football-data.co.uk
+A,射门数据-5场,away_avg_shots_5,football-data.co.uk
+A,射门数据-5场,away_avg_sot_5,football-data.co.uk
+A,射门数据-5场,away_shot_accuracy_5,football-data.co.uk
+A,射门数据-5场,away_conversion_rate_5,football-data.co.uk
+A,射门数据-10场,home_avg_shots_10,football-data.co.uk
+A,射门数据-10场,home_avg_sot_10,football-data.co.uk
+A,射门数据-10场,home_shot_accuracy_10,football-data.co.uk
+A,射门数据-10场,home_conversion_rate_10,football-data.co.uk
+A,射门数据-10场,away_avg_shots_10,football-data.co.uk
+A,射门数据-10场,away_avg_sot_10,football-data.co.uk
+A,射门数据-10场,away_shot_accuracy_10,football-data.co.uk
+A,射门数据-10场,away_conversion_rate_10,football-data.co.uk
+A,历史交锋,h2h_home_wins,football-data.co.uk
+A,历史交锋,h2h_away_wins,football-data.co.uk
+A,历史交锋,h2h_draws,football-data.co.uk
+A,历史交锋,h2h_home_avg_goals,football-data.co.uk
+A,历史交锋,h2h_away_avg_goals,football-data.co.uk
+A,联赛等级,league_level,football-data.co.uk
+B,FootyStats跨赛季,home_ppg,FootyStats API
+B,FootyStats跨赛季,away_ppg,FootyStats API
+B,FootyStats跨赛季,ppg_diff,FootyStats API
+B,FootyStats预期进球,pre_match_xg_home,FootyStats API
+B,FootyStats预期进球,pre_match_xg_away,FootyStats API
+B,FootyStats预期进球,pre_match_xg_diff,FootyStats API
+B,FootyStats控球率,home_possession,FootyStats API
+B,FootyStats控球率,away_possession,FootyStats API
+B,FootyStats控球率,possession_diff,FootyStats API

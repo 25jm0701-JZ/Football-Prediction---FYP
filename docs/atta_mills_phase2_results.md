@@ -61,3 +61,6 @@ Runtime: 223.57 seconds on CUDA.
 Conclusion: local GPU training works, but the PyTorch MLP variants do not beat
 the Phase 2 Random Forest or the Bet365 closing market on this clean pre-match
 feature set.
+
+No further GPU tuning is planned for this branch. The CPU walk-forward scripts
+remain the default experiment path.

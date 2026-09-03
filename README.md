@@ -124,6 +124,8 @@ Local GPU MLP run:
 
 Result: `torch_mlp_deep` reached 49.96% accuracy and `torch_mlp_wide` reached
 48.68%, both below Bet365 closing odds and the Phase 2 Random Forest.
+No further GPU tuning is planned for this branch; the CPU walk-forward scripts
+are the default path for routine experiments.
 
 A Kaggle-ready GPU notebook is also included:
 

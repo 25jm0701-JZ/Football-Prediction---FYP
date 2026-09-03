@@ -1225,3 +1225,9 @@ GeForce RTX 3050 Laptop GPU and completed a Phase 2 MLP walk-forward run in
 The local GPU run confirms that hardware acceleration is working, but the
 additional neural models still do not outperform the Phase 2 Random Forest or
 the Bet365 closing benchmark.
+
+**Decision**: No further GPU tuning is needed for this branch. The dataset is
+small tabular football data, and the strongest observed model remains a CPU
+tree/LR-style workflow rather than a neural network. Future routine experiments
+should use the CPU walk-forward scripts unless a new, larger neural feature set
+is introduced.

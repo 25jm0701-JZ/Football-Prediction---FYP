@@ -1106,3 +1106,107 @@ to document their relative performance. Only "best per match" is used in the the
 
 **Conclusion**: Strategy choice has minimal impact on ROI at the thesis threshold of 30%.
 Best per match is selected for the overview as it provides the largest sample and most complete coverage.
+
+---
+
+## Experiment 019 — Atta Mills PL Phase 1/2 Reproduction
+
+**Date**: 2026-09-03
+
+**Context**: Refocus the league experiment around Atta Mills et al. (2024),
+but keep the target as a clean pre-match Premier League H/D/A prediction task.
+The reference paper reports much higher accuracy, but it includes half-time
+result/goals and an O/U 2.5 task. Those variables are excluded here because
+they turn the problem into in-play prediction rather than pre-match prediction.
+
+**Repository backup**:
+
+- Baseline commit before this branch: `208dd90`
+- Backup tag: `backup/current-experiment-2026-09-03`
+- Experiment branch: `codex/atta-mills-pl-walkforward`
+
+### Phase 1 — Strict Atta Mills-style Pre-match Features
+
+**Data**: Premier League football-data.co.uk CSVs, 2019/20-2025/26,
+2,660 matches.
+
+**Validation**: season-by-season walk-forward. Each test season is predicted
+using only previous seasons.
+
+**Training exclusions**:
+
+- Bet365 odds are excluded from training.
+- FootyStats PPG/xG/possession is excluded.
+- Half-time result/goals are excluded.
+- O/U 2.5 is excluded.
+- H2H and rolling shot-efficiency features are excluded in Phase 1.
+
+**Features**: 44 Atta Mills-style pre-match features:
+
+- Team state / rolling points
+- Attack strength
+- Defense strength
+- Goals for
+- Goals against
+- Goal differential
+- Win/draw/loss history
+- Win margin goals
+- Loss margin goals
+
+**Market benchmark**: Bet365 closing odds, converted to de-vigged implied
+probabilities; market prediction is the highest closing implied probability.
+
+| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
+|:------|:--------:|:--------:|:-------:|:-------:|:-----:|
+| **LR** | **49.69%** | 0.3810 | 0.0443 | 1.0339 | 0.2065 |
+| FNN/MLP | 49.56% | 0.3750 | 0.0356 | 1.0328 | 0.2063 |
+| Random Forest | 49.52% | 0.3709 | 0.0247 | 1.0353 | 0.2066 |
+| XGBoost | 46.58% | 0.3883 | 0.1427 | 1.1041 | 0.2186 |
+| LR balanced | 44.25% | 0.4172 | 0.2447 | 1.0595 | 0.2129 |
+| Bet365 closing | **54.87%** | 0.4087 | 0.0000 | **0.9626** | **0.1904** |
+
+**Phase 1 conclusion**: Strict Atta Mills-style pre-match features underperform
+Bet365 closing odds. The best model by accuracy is LR at 49.69%, still 5.18pp
+below the closing market. Balanced LR improves Draw F1 but sacrifices accuracy.
+
+### Phase 2 — Add Original Clean Pre-match Features
+
+**Added features**: 21 original clean extras:
+
+- 16 rolling shot-efficiency features: shots, shots on target, shot accuracy,
+  conversion rate for home/away teams over 5/10 windows.
+- 5 head-to-head features.
+
+**Total features**: 65 = 44 Phase 1 + 21 original clean extras.
+
+| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
+|:------|:--------:|:--------:|:-------:|:-------:|:-----:|
+| **Random Forest** | **51.01%** | 0.3773 | 0.0073 | 1.0151 | 0.2020 |
+| SVM | 49.96% | 0.3638 | 0.0000 | 1.0277 | 0.2053 |
+| FNN/MLP | 49.21% | 0.3595 | 0.0110 | 1.0356 | 0.2059 |
+| LR | 48.60% | 0.4071 | 0.1376 | 1.0708 | 0.2120 |
+| LR balanced | 44.96% | 0.4304 | **0.2786** | 1.0980 | 0.2187 |
+| Bet365 closing | **54.87%** | 0.4087 | 0.0000 | **0.9626** | **0.1904** |
+
+**Phase 2 conclusion**: Adding H2H and rolling shot-efficiency features improves
+the best model from 49.69% to 51.01%, but the result remains below Bet365
+closing odds. This supports the interpretation that the reference paper's high
+accuracy is likely helped substantially by half-time/in-play variables, and that
+clean pre-match reproduction is a harder task.
+
+**Outputs**:
+
+- `scripts/atta_mills_pl_phase1.py`
+- `scripts/atta_mills_pl_phase2.py`
+- `docs/atta_mills_phase1_results.md`
+- `docs/atta_mills_phase2_results.md`
+- `notebooks/atta_mills_phase2_kaggle_gpu.ipynb` — Kaggle GPU notebook for
+  running PyTorch MLP variants on the Phase 2 feature set.
+- `outputs/atta_mills_pl_walkforward/phase1_atta_mills_only/`
+- `outputs/atta_mills_pl_walkforward/phase2_with_original_features/`
+
+**GPU note**: Local hardware has an NVIDIA RTX 3050 Laptop GPU, but the active
+local Python environment has CPU-only PyTorch (`torch 2.11.0+cpu`). A local CUDA
+install was not continued; the GPU follow-up is prepared as a Kaggle notebook
+instead, so cloud GPU resources can be used without changing the local project
+environment.

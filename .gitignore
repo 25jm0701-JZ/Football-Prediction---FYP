@@ -4,3 +4,4 @@ outputs/
 ~$*.xlsx
 world_cup/data/raw/international_results.csv
 node_modules/
+.venv*/

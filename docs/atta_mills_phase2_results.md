@@ -43,3 +43,21 @@ Bet365 closing market accuracy is 54.87%, with 0.0000 Draw F1.
 ## Interpretation
 
 Phase 2 tests whether the project's original clean pre-match features add useful signal beyond the strict Atta Mills-style reproduction. Model choice remains data-driven: the final candidate should be selected from walk-forward accuracy, macro F1, Draw F1, log loss, and Brier score rather than from the reference paper alone.
+
+## Local GPU MLP Follow-up
+
+Local CUDA training was enabled in `.venv_cuda` using PyTorch `2.11.0+cu128`.
+PyTorch detected `NVIDIA GeForce RTX 3050 Laptop GPU` and trained two MLP
+variants on the same 65 Phase 2 features.
+
+| Model | Accuracy | Macro F1 | Draw F1 | Log Loss | Brier |
+|---|---:|---:|---:|---:|---:|
+| Bet365 closing | **0.5487** | **0.4087** | 0.0000 | **0.9626** | **0.1904** |
+| torch_mlp_deep | 0.4996 | 0.3854 | 0.0508 | 1.0239 | 0.2040 |
+| torch_mlp_wide | 0.4868 | 0.3987 | 0.1133 | 1.0287 | 0.2047 |
+
+Runtime: 223.57 seconds on CUDA.
+
+Conclusion: local GPU training works, but the PyTorch MLP variants do not beat
+the Phase 2 Random Forest or the Bet365 closing market on this clean pre-match
+feature set.

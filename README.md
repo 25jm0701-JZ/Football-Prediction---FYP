@@ -108,8 +108,24 @@ Conclusion: adding the original clean features improves the best model from
 
 ## Kaggle GPU Notebook
 
-The local machine has an NVIDIA GPU, but the local Python environment currently
-uses CPU-only PyTorch. A Kaggle-ready GPU notebook is included instead:
+The local machine can also run CUDA PyTorch through the isolated `.venv_cuda`
+environment. The local GPU check detected:
+
+```text
+PyTorch: 2.11.0+cu128
+GPU: NVIDIA GeForce RTX 3050 Laptop GPU
+```
+
+Local GPU MLP run:
+
+```powershell
+.\.venv_cuda\Scripts\python.exe scripts\atta_mills_pl_gpu_mlp.py
+```
+
+Result: `torch_mlp_deep` reached 49.96% accuracy and `torch_mlp_wide` reached
+48.68%, both below Bet365 closing odds and the Phase 2 Random Forest.
+
+A Kaggle-ready GPU notebook is also included:
 
 ```text
 notebooks/atta_mills_phase2_kaggle_gpu.ipynb

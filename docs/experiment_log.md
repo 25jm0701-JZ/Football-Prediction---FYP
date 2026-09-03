@@ -1210,3 +1210,18 @@ local Python environment has CPU-only PyTorch (`torch 2.11.0+cpu`). A local CUDA
 install was not continued; the GPU follow-up is prepared as a Kaggle notebook
 instead, so cloud GPU resources can be used without changing the local project
 environment.
+
+**Local GPU follow-up**: CUDA PyTorch was later installed in an isolated
+`.venv_cuda` environment. PyTorch `2.11.0+cu128` detected the local NVIDIA
+GeForce RTX 3050 Laptop GPU and completed a Phase 2 MLP walk-forward run in
+223.57 seconds.
+
+| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
+|:------|:--------:|:--------:|:-------:|:-------:|:-----:|
+| Bet365 closing | **54.87%** | **0.4087** | 0.0000 | **0.9626** | **0.1904** |
+| torch_mlp_deep | 49.96% | 0.3854 | 0.0508 | 1.0239 | 0.2040 |
+| torch_mlp_wide | 48.68% | 0.3987 | 0.1133 | 1.0287 | 0.2047 |
+
+The local GPU run confirms that hardware acceleration is working, but the
+additional neural models still do not outperform the Phase 2 Random Forest or
+the Bet365 closing benchmark.

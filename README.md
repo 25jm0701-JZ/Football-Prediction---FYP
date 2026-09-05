@@ -106,6 +106,35 @@ Aggregate walk-forward result:
 Conclusion: adding the original clean features improves the best model from
 49.69% to 51.01%, but still does not beat the closing market.
 
+## Phase 3: Half-time Paper-style Backup
+
+Script:
+
+```powershell
+python scripts/atta_mills_pl_phase3_halftime.py
+python scripts/atta_mills_english4_phase3_halftime.py
+```
+
+This branch keeps a paper-style half-time reproduction as a backup experiment
+only. It is **not recommended** as the final project direction because
+half-time goals/result are in-play information, not pre-match information. The
+result is useful for explaining why the reference paper's reported accuracy can
+look much higher than a clean pre-match forecast, but it should not be presented
+as the deployable prediction model.
+
+Aggregate walk-forward result:
+
+| Data | Config | Model | Accuracy | Draw F1 | Market Accuracy |
+|---|---|---|---:|---:|---:|
+| PL only | Half-time, no odds | RF balanced | 60.88% | 0.3879 | 54.87% |
+| PL only | Half-time + B365 opening | RF | 62.15% | 0.2806 | 54.87% |
+| E0-E3 | Half-time, no odds | LR | 59.16% | 0.3688 | 49.38% |
+| E0-E3 | Half-time + B365 opening | LR | 60.31% | 0.3518 | 49.38% |
+
+Conclusion: half-time variables lift accuracy sharply, but they change the
+research problem into an in-play task. Keep this branch as evidence and backup,
+not as the recommended modeling path.
+
 ## Kaggle GPU Notebook
 
 The local machine can also run CUDA PyTorch through the isolated `.venv_cuda`

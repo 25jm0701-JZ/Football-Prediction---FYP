@@ -1231,3 +1231,72 @@ small tabular football data, and the strongest observed model remains a CPU
 tree/LR-style workflow rather than a neural network. Future routine experiments
 should use the CPU walk-forward scripts unless a new, larger neural feature set
 is introduced.
+
+## Experiment 020 — Atta Mills Half-time Paper-style Reproduction
+
+**Date**: 2026-09-04
+
+**Branch**: `codex/halftime-paper-replication`
+
+**Context**: The strict pre-match Atta Mills reproduction underperformed the
+Bet365 closing market, and Phase 2 original clean extras only improved the best
+model to 51.01%. This experiment checks whether adding the paper's half-time
+information explains the gap between the clean pre-match setting and the
+headline paper-style accuracy.
+
+**Script**:
+
+```powershell
+python scripts/atta_mills_pl_phase3_halftime.py
+python scripts/atta_mills_english4_phase3_halftime.py
+```
+
+**Data and validation**: Premier League football-data.co.uk CSVs, 2019/20 to
+2025/26, 2,660 matches, season-by-season walk-forward. Target remains full-time
+H/D/A result. A secondary English E0-E3 run uses the same seasons and 13,988
+matches with `league_level` as a control feature.
+
+**Excluded project extras**:
+
+- H2H features.
+- Rolling shot-efficiency features.
+- FootyStats PPG/xG/possession.
+- Player features.
+- O/U 2.5 target/features.
+
+**Configurations**:
+
+| Config | Feature set |
+|:--|:--|
+| `paper_ht_no_odds` | 44 Atta Mills-style team-state features + 7 half-time score/result features |
+| `paper_ht_with_b365_opening` | Same as above + 4 Bet365 opening odds probability/overround features |
+| `english4_ht_no_odds` | Same half-time setup extended to E0-E3 + `league_level`; LR-only quick baseline |
+| `english4_ht_with_b365_opening` | Same E0-E3 setup + 4 Bet365 opening odds probability/overround features; LR-only quick baseline |
+
+**Aggregate walk-forward results**:
+
+| Config | Features | Best model | Accuracy | Macro F1 | Draw F1 | LogLoss | Market accuracy |
+|:--|--:|:--|--:|--:|--:|--:|--:|
+| `paper_ht_no_odds` | 51 | Random Forest balanced | **60.88%** | 0.5828 | **0.3879** | 0.8695 | 54.87% |
+| `paper_ht_with_b365_opening` | 55 | Random Forest | **62.15%** | 0.5555 | 0.2806 | **0.8434** | 54.87% |
+| `english4_ht_no_odds` | 52 | LR | **59.16%** | 0.5636 | 0.3688 | 0.8612 | 49.38% |
+| `english4_ht_with_b365_opening` | 56 | LR | **60.31%** | 0.5684 | 0.3518 | 0.8466 | 49.38% |
+
+**Interpretation**: Half-time variables materially change the task. The model
+now beats the closing market benchmark by 6.01pp without training odds and by
+7.28pp with Bet365 opening odds, but this is no longer a pre-match forecast. It
+supports the conclusion that the Atta Mills et al. headline results should be
+presented as an in-play/half-time-informed benchmark rather than as evidence
+that the same feature family can solve clean pre-match prediction.
+
+**Recommendation**: Do not use this branch as the final modeling direction. Keep
+it only as a backup and methodology comparison showing the effect of half-time
+variables.
+
+**Outputs**:
+
+- `scripts/atta_mills_pl_phase3_halftime.py`
+- `scripts/atta_mills_english4_phase3_halftime.py`
+- `docs/atta_mills_phase3_halftime_results.md`
+- `outputs/atta_mills_pl_walkforward/phase3_halftime_paper_replication/`
+- `outputs/atta_mills_english4_phase3_halftime/`

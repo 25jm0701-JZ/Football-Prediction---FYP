@@ -1231,3 +1231,101 @@ small tabular football data, and the strongest observed model remains a CPU
 tree/LR-style workflow rather than a neural network. Future routine experiments
 should use the CPU walk-forward scripts unless a new, larger neural feature set
 is introduced.
+
+---
+
+## Experiment 020 — Atta Mills Track A English4 Archive
+
+**Date**: 2026-09-05
+
+**Branch**: `codex/atta-mills-tracka-english4`
+
+**Context**: Archive the clean pre-match Track A extension of the Atta
+Mills-style reproduction. The aim is to test whether expanding from Premier
+League-only data to the full English E0-E3 football-data.co.uk dataset improves
+the clean Atta Mills framework by increasing match volume and preserving team
+history across promotion/relegation.
+
+This experiment is intentionally separate from the half-time/in-play branch
+(`codex/halftime-paper-replication`). Half-time goals/result are still excluded
+here, because they are only known after the first half and change the research
+problem from pre-match prediction to in-play prediction.
+
+### Experimental Progression
+
+1. **Strict Atta Mills-style PL reproduction**:
+   - Data: Premier League only, 2019/20-2025/26.
+   - Features: 44 Atta Mills-style pre-match team-state features.
+   - Exclusions: odds as training features, half-time variables, O/U 2.5,
+     FootyStats, H2H, and rolling shot-efficiency features.
+   - Best model: LR, 49.69% accuracy.
+   - Market benchmark: Bet365 closing, 54.87% accuracy.
+
+2. **PL reproduction plus original clean features**:
+   - Added 16 rolling shot-efficiency features and 5 H2H features.
+   - Total features: 65.
+   - Best model: Random Forest, 51.01% accuracy.
+   - Market benchmark: Bet365 closing, 54.87% accuracy.
+   - Interpretation: the project's original clean features add useful signal,
+     but not enough to beat the closing market.
+
+3. **Track A English4 extension**:
+   - Data: E0, E1, E2, and E3 as one integrated chronological dataset.
+   - Seasons: 2019/20-2025/26.
+   - Matches: 13,988.
+   - Validation: season-by-season walk-forward.
+   - Features: 66 total = 44 Atta Mills-style features + 16 rolling
+     shot-efficiency features + 5 H2H features + 1 `league_level` feature.
+   - Exclusions remain unchanged: no odds in training, no half-time variables,
+     no O/U 2.5, and no FootyStats.
+
+### Promotion/Relegation Handling
+
+Team histories are keyed by team name rather than by league. This means a team
+that is promoted or relegated carries its rolling history into its new division,
+instead of being treated as a completely new entity. A `league_level` control
+marks the match tier:
+
+- E0 = 0
+- E1 = 1
+- E2 = 2
+- E3 = 3
+
+### Track A Results
+
+| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
+|:------|:--------:|:--------:|:-------:|:-------:|:-----:|
+| **Random Forest** | **46.01%** | 0.3395 | 0.0204 | 1.0553 | 0.2119 |
+| LR | 45.62% | 0.3520 | 0.0415 | 1.0562 | 0.2120 |
+| Voting RF/XGB | 45.37% | 0.3487 | 0.0544 | 1.0606 | 0.2129 |
+| XGBoost | 44.35% | 0.3554 | 0.0897 | 1.0758 | 0.2159 |
+| Random Forest balanced | 43.21% | 0.3870 | 0.1818 | 1.0696 | 0.2152 |
+| LR balanced | 41.88% | 0.3950 | **0.2369** | 1.0809 | 0.2175 |
+| Bet365 closing | **49.38%** | 0.3653 | 0.0006 | **1.0189** | **0.2036** |
+
+### Archived Conclusion
+
+The Track A English4 extension did not improve the clean pre-match Atta
+Mills-style workflow. Although adding E1-E3 increases the training sample and
+preserves promoted/relegated team histories, the combined four-division task is
+more heterogeneous and noisier than the Premier League-only task. The best
+Track A model reaches 46.01%, below both the PL Phase 2 model at 51.01% and the
+E0-E3 Bet365 closing benchmark at 49.38%.
+
+The useful conclusion from this branch is therefore negative but important:
+more same-source football-data.co.uk league data does not automatically improve
+clean pre-match H/D/A prediction. The larger gains seen in the separate
+half-time branch should be interpreted independently as the effect of
+in-play/half-time information, not as evidence that the clean pre-match feature
+set can reproduce the paper's headline performance.
+
+**Archive decision**: keep this branch as a completed negative-result Track A
+record. Do not continue tuning this branch unless a new feature family is
+introduced; future work should either return to the PL clean feature set or be
+clearly labelled as a separate in-play/half-time experiment.
+
+**Outputs**:
+
+- `scripts/atta_mills_tracka_english4.py`
+- `docs/atta_mills_tracka_english4_results.md`
+- `outputs/atta_mills_tracka_english4/`

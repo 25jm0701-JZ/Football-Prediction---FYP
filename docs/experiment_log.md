@@ -1329,3 +1329,106 @@ clearly labelled as a separate in-play/half-time experiment.
 - `scripts/atta_mills_tracka_english4.py`
 - `docs/atta_mills_tracka_english4_results.md`
 - `outputs/atta_mills_tracka_english4/`
+
+---
+
+## Experiment 024 — Track A Poisson Goals Baseline
+
+**Date**: 2026-09-07
+
+**Branch**: `codex/tracka-poisson-goals`
+
+**Context**: Add a Loukas et al. (2024)-style Poisson goals baseline under the
+clean Track A English4 line. This branch is not Track B: Track B remains the
+FootyStats-enhanced route. The purpose here is to keep the same
+football-data.co.uk, no-external-enhancement setting as Track A, but switch the
+modelling target from direct H/D/A classification to goals -> scoreline ->
+H/D/A probability aggregation.
+
+### Method
+
+For each walk-forward fold, the model is fitted only on seasons before the test
+season. It estimates:
+
+- `mu`: log average away goals in the training data.
+- `mu_home`: pooled home-goal log advantage.
+- team attack parameters from historical goals scored.
+- team defence parameters from historical goals conceded.
+
+The expected goals equations follow the Loukas-style independent double
+Poisson structure:
+
+```text
+log(lambda_home) = mu + mu_home + attack_home + defence_away
+log(lambda_away) = mu + attack_away + defence_home
+```
+
+The scoreline matrix is generated from independent home and away Poisson
+distributions. H/D/A probabilities are then aggregated from all scorelines:
+
+```text
+P(H) = sum P(home_goals > away_goals)
+P(D) = sum P(home_goals = away_goals)
+P(A) = sum P(home_goals < away_goals)
+```
+
+No O/U 2.5 experiment is included in this branch.
+
+### Leakage Position
+
+This validation is stricter than the random 20% validation in Loukas et al.
+(2024), because the paper's random-sample and same-season team-total checks can
+use information from matches being evaluated if the full season is used to
+estimate team attack/defence parameters. Here, each test season is unseen at
+fit time, so the evaluation follows the project's established Track A
+walk-forward protocol.
+
+### Results
+
+| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
+|:------|:--------:|:--------:|:-------:|:-------:|:-----:|
+| Loukas-style Poisson | 42.00% | 0.2974 | 0.0000 | 1.0945 | 0.2213 |
+| Bet365 closing | 49.38% | 0.3653 | 0.0006 | 1.0189 | 0.2036 |
+
+Goal metrics:
+
+| Metric | Value |
+|:-------|------:|
+| Home goals MAE vs lambda | 1.0508 |
+| Away goals MAE vs lambda | 0.9457 |
+| Total goals MAE vs lambda total | 1.4030 |
+| Exact home goals from modal score | 33.22% |
+| Exact away goals from modal score | 35.18% |
+| Exact score from modal score | 11.80% |
+| Home goals within +/-1 | 80.57% |
+| Away goals within +/-1 | 86.13% |
+
+Using the paper's rounded goal-difference style, the all-fold walk-forward
+results are 73.3% of home-goal predictions and 81.3% of away-goal predictions
+within +/-1. This is below the paper's same-season random 76-match check for
+away goals, but broadly consistent with the paper's independent 50-match check.
+
+### Interpretation
+
+The first Track A Poisson run is useful as a clean, interpretable goal-based
+baseline, but it does not beat the market or the existing Track A classifiers
+on H/D/A accuracy. Its main value is methodological: it gives expected goals,
+modal scorelines, and full scoreline-derived H/D/A probabilities under the same
+no-FootyStats Track A data policy.
+
+The zero Draw F1 confirms the known limitation of independent Poisson models:
+draw probabilities are non-zero, but they rarely become the argmax prediction.
+Future work can test Dixon-Coles correction or use Poisson probabilities as
+additional Track A classifier features, but those should be labelled as follow-up
+extensions rather than this first Loukas-style baseline.
+
+**Final decision**: keep `codex/tracka-poisson-goals` as a documented Track A
+Poisson goals baseline. Do not promote it to the main Track A classifier, and do
+not label it as Track B because Track B is reserved for FootyStats-enhanced
+models.
+
+**Outputs**:
+
+- `scripts/tracka_poisson_goals.py`
+- `docs/tracka_poisson_goals_results.md`
+- `outputs/tracka_poisson_goals/`

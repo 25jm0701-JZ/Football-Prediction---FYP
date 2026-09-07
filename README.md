@@ -1,147 +1,87 @@
-# Football Prediction FYP — Atta Mills Track A English4 Branch
+# Football Prediction FYP - Track A Poisson Goals Baseline
 
-This branch extends the Atta Mills Premier League experiment to English E0-E3
-as one integrated Track A dataset.
+This branch adds a Loukas et al. (2024)-style Poisson goals baseline under the
+clean Track A English4 line.
 
-The question tested here:
+It is not Track B. In this project, Track B is reserved for FootyStats-enhanced
+models. This branch uses only football-data.co.uk match results and historical
+full-time goals, then predicts:
 
-> If we add Championship, League One, and League Two data to the clean pre-match
-> Atta Mills-style setup, does the larger training set and promotion/relegation
-> continuity improve performance?
-
-Current answer: no. The extra leagues increase sample size and preserve team
-history across promotion/relegation, but the best model still underperforms the
-Bet365 closing market.
+- expected home goals
+- expected away goals
+- modal scoreline
+- H/D/A probabilities aggregated from the scoreline matrix
 
 ## Branch Context
 
 | Item | Value |
 |---|---|
-| Parent experiment branch | `codex/atta-mills-pl-walkforward` |
-| This branch | `codex/atta-mills-tracka-english4` |
-| Baseline backup tag | `backup/current-experiment-2026-09-03` |
-| Full experiment log | `docs/experiment_log.md` |
+| Main Track A branch | `codex/atta-mills-tracka-english4` |
+| This branch | `codex/tracka-poisson-goals` |
+| Result document | `docs/tracka_poisson_goals_results.md` |
+| Output directory | `outputs/tracka_poisson_goals/` |
 
-## Data
+## Conclusion
 
-Data comes from football-data.co.uk English league CSV files:
+This branch should remain a Track A goal-based baseline, not the main Track A
+classifier and not Track B.
 
-| Division | Meaning | Matches |
-|---|---|---:|
-| E0 | Premier League | 2,660 |
-| E1 | Championship | 3,864 |
-| E2 | League One | 3,712 |
-| E3 | League Two | 3,752 |
-| **Total** |  | **13,988** |
+The model is useful because it adds interpretable expected goals, modal
+scorelines, and full scoreline-derived H/D/A probabilities using only clean
+football-data.co.uk match results. However, as a standalone H/D/A predictor it
+does not outperform either the Bet365 closing market or the existing Track A
+classification models.
 
-Seasons covered:
+| Model | H/D/A Accuracy | Macro F1 | Draw F1 | Log Loss | Brier |
+|---|---:|---:|---:|---:|---:|
+| Loukas-style Poisson | 42.00% | 0.2974 | 0.0000 | 1.0945 | 0.2213 |
+| Bet365 closing | 49.38% | 0.3653 | 0.0006 | 1.0189 | 0.2036 |
+
+Goal prediction is more encouraging than result classification:
+
+| Metric | Value |
+|---|---:|
+| Home goals MAE vs lambda | 1.0508 |
+| Away goals MAE vs lambda | 0.9457 |
+| Total goals MAE vs lambda total | 1.4030 |
+| Exact score from modal score | 11.80% |
+| Home goals within +/-1 | 80.57% |
+| Away goals within +/-1 | 86.13% |
+
+Compared with Loukas et al. (2024), the same broad pattern appears: most goal
+estimates are close, especially within +/-1 goal. The project conclusion is more
+conservative because this branch uses season-by-season walk-forward validation
+instead of same-season random sampling.
+
+## Method
+
+The model follows the independent double-Poisson structure from Loukas et al.
+(2024):
 
 ```text
-2019/20 through 2025/26
+log(lambda_home) = mu + mu_home + attack_home + defence_away
+log(lambda_away) = mu + attack_away + defence_home
 ```
 
-Target:
-
-```text
-Full-time H/D/A result
-```
-
-## Promotion/Relegation Logic
-
-This branch follows the original Track A idea:
-
-- E0-E3 are merged into one chronological dataset.
-- Team rolling histories are keyed by team name, not by division.
-- A promoted or relegated team carries its historical form into the next
-  division.
-- `league_level` tells the model the match level:
-  - E0 = 0
-  - E1 = 1
-  - E2 = 2
-  - E3 = 3
-
-This avoids the PL-only problem where promoted teams can have weak or missing
-Premier League history.
-
-## Feature Set
-
-The experiment uses 66 clean pre-match features:
-
-- 44 Atta Mills-style features:
-  - team state
-  - attack strength
-  - defense strength
-  - goals for/against
-  - goal differential
-  - win/draw/loss history
-  - win/loss margin goals
-- 16 rolling shot-efficiency features
-- 5 H2H features
-- 1 `league_level` feature
-
-Excluded from training:
-
-- Bet365 odds and other bookmaker odds
-- Half-time result/goals
-- O/U 2.5
-- FootyStats
-- Current-match raw statistics
+The scoreline matrix is converted to H/D/A probabilities by summing all home-win,
+draw, and away-win score probabilities.
 
 ## Validation
 
-The experiment uses season-by-season walk-forward validation:
+The evaluation uses the Track A season-by-season walk-forward protocol:
 
-- Train on all seasons before the test season.
-- Test on the next season.
-- Repeat from 2020/21 through 2025/26.
+- train on all seasons before the test season
+- test on the next season
+- repeat through the available English4 data
 
-Total walk-forward test matches: 12,216.
-
-## Results
-
-| Model | Accuracy | Macro F1 | Draw F1 | LogLoss | Brier |
-|---|---:|---:|---:|---:|---:|
-| Random Forest | **46.01%** | 0.3395 | 0.0204 | 1.0553 | 0.2119 |
-| Logistic Regression | 45.62% | 0.3520 | 0.0415 | 1.0562 | 0.2120 |
-| Voting RF+XGB | 45.37% | 0.3487 | 0.0544 | 1.0606 | 0.2129 |
-| XGBoost | 44.35% | 0.3554 | 0.0897 | 1.0758 | 0.2159 |
-| Random Forest balanced | 43.21% | 0.3870 | 0.1818 | 1.0696 | 0.2152 |
-| LR balanced | 41.88% | 0.3950 | **0.2369** | 1.0809 | 0.2175 |
-| Bet365 closing | **49.38%** | 0.3653 | 0.0006 | **1.0189** | **0.2036** |
-
-## Interpretation
-
-Adding E1-E3 did not improve the clean Atta Mills branch. It solved part of the
-promotion/relegation history problem, but the combined E0-E3 task is more
-heterogeneous than PL-only prediction. Under this feature set, the extra data
-does not compensate for cross-division differences.
-
-The result also reinforces the earlier finding: Atta Mills et al.'s high
-headline accuracy is not directly comparable to this clean pre-match setting,
-because their framework includes half-time/in-play information.
+This avoids the same-season leakage risk in random-sample validation.
 
 ## Run
 
 From the repository root:
 
 ```powershell
-python scripts/atta_mills_tracka_english4.py
-```
-
-Outputs are written locally to:
-
-```text
-outputs/atta_mills_tracka_english4/
+python scripts/tracka_poisson_goals.py
 ```
 
 Generated outputs are ignored by Git.
-
-## Key Files
-
-| Path | Purpose |
-|---|---|
-| `scripts/atta_mills_tracka_english4.py` | E0-E3 Track A experiment runner |
-| `docs/atta_mills_tracka_english4_results.md` | Result summary |
-| `docs/experiment_log.md` | Full experiment log |
-| `scripts/atta_mills_pl_phase1.py` | PL-only Phase 1 reference |
-| `scripts/atta_mills_pl_phase2.py` | PL-only Phase 2 reference |

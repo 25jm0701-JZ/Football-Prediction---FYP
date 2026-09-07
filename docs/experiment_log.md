@@ -1329,3 +1329,204 @@ clearly labelled as a separate in-play/half-time experiment.
 - `scripts/atta_mills_tracka_english4.py`
 - `docs/atta_mills_tracka_english4_results.md`
 - `outputs/atta_mills_tracka_english4/`
+
+---
+
+## Experiment 021 — Track A Window A/B Test
+
+**Date**: 2026-09-05
+
+**Branch**: `codex/football-nn-methodology-plan`
+
+**Context**: Test whether the 20-match rolling window suggested by Luiz,
+Fialho, and Teixeira (2024) should replace the current Track A 5+10 rolling
+window setup. This is a clean pre-match experiment using the project's own
+football-data.co.uk English4 data, not WhoScored data.
+
+### Design
+
+- Data: E0-E3, 2019/20-2025/26, 13,988 matches.
+- Validation: season-by-season walk-forward.
+- Test matches: 12,216.
+- Training exclusions: no bookmaker odds, no half-time variables, no current
+  match statistics, no FootyStats.
+- Market benchmark: Bet365 closing implied probabilities.
+- Models: LR, RF, XGB. MLP is left for a later neural-network-specific run.
+
+Two configurations were tested:
+
+1. **A: 5+10 windows** — current Track A setup.
+2. **B: 20-only window** — Luiz-inspired replacement test.
+
+### Results
+
+| Config | Windows | Model | Features | Accuracy | Macro F1 | Draw F1 | Log Loss | Brier |
+|:--|:--|:--|--:|--:|--:|--:|--:|--:|
+| A | 5+10 | RF | 50 | **45.18%** | 0.3214 | 0.0136 | 1.0586 | 0.2127 |
+| A | 5+10 | LR | 50 | 45.06% | 0.3394 | 0.0418 | 1.0629 | 0.2136 |
+| A | 5+10 | XGB | 50 | 40.83% | 0.3486 | 0.1644 | 1.1901 | 0.2351 |
+| B | 20 | LR | 28 | **44.70%** | 0.3258 | 0.0235 | 1.0612 | 0.2133 |
+| B | 20 | RF | 28 | 44.24% | 0.3122 | 0.0122 | 1.0634 | 0.2139 |
+| B | 20 | XGB | 28 | 40.52% | 0.3475 | 0.1671 | 1.1798 | 0.2344 |
+| Benchmark | — | Bet365 closing | 0 | **49.37%** | 0.3650 | 0.0007 | 1.0190 | 0.2036 |
+
+### Conclusion
+
+The 20-match-only setup does not improve Track A. Replacing the existing 5+10
+windows with a single 20-match window reduces LR and RF accuracy slightly, while
+the market benchmark remains clearly stronger than both feature configurations.
+
+**Decision**: Do not replace Track A's 5+10 windows with 20-only windows. The
+next Luiz-inspired test should focus on relative features rather than direct
+window replacement.
+
+**Outputs**:
+
+- `scripts/tracka_window_abtest.py`
+- `docs/tracka_window_abtest_results.md`
+- `outputs/tracka_window_abtest/`
+
+---
+
+## Experiment 022 — Track A Relative-Feature A/B Test
+
+**Date**: 2026-09-05
+
+**Branch**: `codex/football-nn-methodology-plan`
+
+**Context**: Test whether Luiz et al. (2024)-inspired relative-strength
+features improve the current clean Track A English4 setup. This experiment
+keeps the rolling windows fixed at `[5, 10]` and changes only the feature
+representation.
+
+### Design
+
+- Data: football-data.co.uk English E0-E3, 2019/20-2025/26.
+- Matches: 13,988.
+- Validation: season-by-season walk-forward.
+- Test matches: 12,216.
+- Training exclusions: no bookmaker odds, no half-time variables, no current
+  match statistics, no FootyStats.
+- Market benchmark: Bet365 closing implied probabilities.
+- Models: LR, RF, XGB.
+
+Two configurations were tested:
+
+1. **A: baseline** — current Track A 5+10 features.
+2. **B: +relative features** — baseline plus 28 relative features.
+
+### Relative Feature Block
+
+For each window in `[5, 10]`, the script adds:
+
+- relative goals for / against.
+- relative goal difference.
+- relative points.
+- relative win, draw, and loss rates.
+- home attack versus away defense.
+- away attack versus home defense.
+- relative attack-defense gap.
+- relative shots, shots on target, shot accuracy, and conversion rate.
+
+All relative features are computed from already-lagged rolling inputs, so they
+do not introduce current-match leakage.
+
+### Results
+
+| Config | Model | Features | Relative Features | Accuracy | Macro F1 | Draw F1 | Log Loss | Brier |
+|:--|:--|--:|--:|--:|--:|--:|--:|--:|
+| A: baseline | RF | 50 | 0 | **45.18%** | 0.3214 | 0.0136 | 1.0586 | 0.2127 |
+| A: baseline | LR | 50 | 0 | 45.06% | 0.3394 | 0.0418 | 1.0629 | 0.2136 |
+| A: baseline | XGB | 50 | 0 | 40.83% | 0.3486 | 0.1644 | 1.1901 | 0.2351 |
+| B: +relative | RF | 78 | 28 | **45.06%** | 0.3231 | 0.0173 | 1.0584 | 0.2127 |
+| B: +relative | LR | 78 | 28 | 45.05% | 0.3402 | 0.0426 | 1.0638 | 0.2138 |
+| B: +relative | XGB | 78 | 28 | 40.86% | 0.3472 | 0.1584 | 1.1935 | 0.2359 |
+| Benchmark | Bet365 closing | 0 | 0 | **49.37%** | 0.3650 | 0.0007 | **1.0190** | **0.2036** |
+
+### Conclusion
+
+The relative-feature block does not materially improve Track A. LR is
+essentially unchanged, RF drops slightly, and XGB changes only trivially. The
+most likely explanation is that these relative differences are interpretable
+but mostly redundant with the original paired home/away rolling features.
+
+**Decision**: Do not adopt the full 28-feature relative block as a default Track
+A feature set. The next useful step is high-confidence prediction analysis on
+the existing best Track A baseline, rather than adding more similar difference
+features.
+
+**Outputs**:
+
+- `scripts/tracka_relative_features_abtest.py`
+- `docs/tracka_relative_features_abtest_results.md`
+- `outputs/tracka_relative_features_abtest/`
+
+---
+
+## Experiment 023 — Track A High-Confidence Prediction Analysis
+
+**Date**: 2026-09-05
+
+**Branch**: `codex/football-nn-methodology-plan`
+
+**Context**: Evaluate whether the current clean Track A 5+10 baseline becomes
+more useful when restricted to matches where the model assigns a high maximum
+class probability. This is a post-model analysis, not a new feature set.
+
+### Design
+
+- Data: football-data.co.uk English E0-E3, 2019/20-2025/26.
+- Features: current clean Track A 5+10 baseline, 50 features.
+- Validation: season-by-season walk-forward.
+- Test matches: 12,216.
+- Training exclusions: no bookmaker odds, no half-time variables, no current
+  match statistics, no FootyStats.
+- Market benchmark: Bet365 closing, evaluated on the same selected matches.
+- Models: LR, RF, XGB.
+- Confidence thresholds: 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70.
+
+### Overall Metrics
+
+| Model | Accuracy | Macro F1 | Draw F1 | Log Loss | Brier |
+|:--|--:|--:|--:|--:|--:|
+| RF | **45.18%** | 0.3214 | 0.0136 | 1.0586 | 0.2127 |
+| LR | 45.06% | 0.3394 | 0.0418 | 1.0629 | 0.2136 |
+| XGB | 40.83% | 0.3486 | 0.1644 | 1.1901 | 0.2351 |
+
+### Key Confidence Results
+
+| Model | Threshold | Matches | Coverage | Model Acc | Market Acc Same Matches | Edge>10% ROI |
+|:--|--:|--:|--:|--:|--:|--:|
+| LR | 0.50 | 3,566 | 29.19% | 53.11% | **54.12%** | -6.72% |
+| LR | 0.60 | 885 | 7.24% | 62.37% | **63.05%** | -5.39% |
+| LR | 0.65 | 340 | 2.78% | 66.18% | **66.76%** | +12.74% |
+| LR | 0.70 | 117 | 0.96% | 68.38% | **69.23%** | +28.09% |
+| RF | 0.50 | 2,738 | 22.41% | 55.48% | **55.77%** | -7.06% |
+| RF | 0.60 | 587 | 4.81% | 65.42% | **66.27%** | -9.24% |
+| RF | 0.65 | 265 | 2.17% | 69.06% | **70.57%** | -3.43% |
+| RF | 0.70 | 87 | 0.71% | 73.56% | **74.71%** | -9.26% |
+| XGB | 0.60 | 4,086 | 33.45% | 47.06% | **51.96%** | -6.04% |
+| XGB | 0.70 | 2,098 | 17.17% | 49.76% | **54.10%** | -8.12% |
+
+### Conclusion
+
+High-confidence filtering increases model accuracy, but it does not create a
+clear market edge. Bet365 closing accuracy remains higher on the same selected
+matches at every reported threshold. The selected high-confidence matches are
+also heavily skewed toward home favourites, especially for RF, which suggests
+that the model is mainly identifying obvious favourite situations already
+priced by the market.
+
+LR shows positive edge>10% ROI at thresholds 0.65 and 0.70, but these subsets
+are very small and should be treated as exploratory rather than thesis-level
+evidence of profitability.
+
+**Decision**: Keep high-confidence analysis as supplementary evidence. It does
+not change the main Track A conclusion that the clean model does not outperform
+the Bet365 closing market.
+
+**Outputs**:
+
+- `scripts/tracka_confidence_analysis.py`
+- `docs/tracka_confidence_analysis_results.md`
+- `outputs/tracka_confidence_analysis/`

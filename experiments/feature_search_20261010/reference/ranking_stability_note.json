@@ -1,0 +1,10 @@
+{
+  "seasons": [
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ],
+  "purpose": "descriptive only",
+  "not_used_to_change_frozen_feature_sets": true,
+  "final_test_not_used": true
+}

@@ -1,0 +1,30 @@
+{
+  "logloss": {
+    "model": "lr",
+    "config": "groups__league__margins__shooting",
+    "C": 1.0,
+    "n_features": 25,
+    "n_matches": 4072,
+    "accuracy": 0.46905697445972494,
+    "macro_f1": 0.3486406997386596,
+    "draw_f1": 0.020072992700729927,
+    "log_loss": 1.0451394514071073,
+    "brier": 0.2095542849297937,
+    "min_season_accuracy": 0.46660117878192536,
+    "max_season_log_loss": 1.0458633683158272
+  },
+  "accuracy": {
+    "model": "lr",
+    "config": "groups__margins",
+    "C": 1.0,
+    "n_features": 8,
+    "n_matches": 4072,
+    "accuracy": 0.47028487229862476,
+    "macro_f1": 0.33897287898145584,
+    "draw_f1": 0.0,
+    "log_loss": 1.050423923840158,
+    "brier": 0.2108051780783442,
+    "min_season_accuracy": 0.46611001964636545,
+    "max_season_log_loss": 1.0514199117365453
+  }
+}

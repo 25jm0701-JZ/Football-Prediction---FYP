@@ -1,0 +1,30 @@
+{
+  "logloss": {
+    "model": "lr",
+    "config": "window_10_only",
+    "C": 1.0,
+    "n_features": 36,
+    "n_matches": 4072,
+    "accuracy": 0.47347740667976423,
+    "macro_f1": 0.34583186917839265,
+    "draw_f1": 0.0,
+    "log_loss": 1.0402470900948204,
+    "brier": 0.20848687676689273,
+    "min_season_accuracy": 0.46512770137524556,
+    "max_season_log_loss": 1.0469479746060188
+  },
+  "accuracy": {
+    "model": "lr",
+    "config": "groups__form__goals_strength__shooting",
+    "C": 1.0,
+    "n_features": 52,
+    "n_matches": 4072,
+    "accuracy": 0.474950884086444,
+    "macro_f1": 0.34888281846624114,
+    "draw_f1": 0.011661807580174927,
+    "log_loss": 1.0428019061837475,
+    "brier": 0.20902230632067736,
+    "min_season_accuracy": 0.4724950884086444,
+    "max_season_log_loss": 1.0475094893819556
+  }
+}

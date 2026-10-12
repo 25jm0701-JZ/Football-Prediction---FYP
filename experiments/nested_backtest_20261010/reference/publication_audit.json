@@ -1,0 +1,34 @@
+{
+  "completed": true,
+  "outer_matches": 12216,
+  "outer_seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "prediction_groups_verified": [
+    "bet365_closing__market",
+    "lr__all_66",
+    "lr__selected_accuracy",
+    "lr__selected_logloss",
+    "lr_scaled__all_66",
+    "lr_scaled__selected_accuracy",
+    "lr_scaled__selected_logloss",
+    "rf__all_66",
+    "rf__selected_accuracy",
+    "rf__selected_logloss"
+  ],
+  "configurations": 2275,
+  "validation_fits_before_cache": 3412,
+  "primary_models_previously_refit_and_verified": 18,
+  "previous_single_season_models_verified": 6,
+  "previous_single_season_probability_comparisons": 9,
+  "input_files_verified": 31,
+  "reference_links_verified": 18,
+  "temporal_feature_unit_tests_passed": 10,
+  "input_line_ending_unit_tests_passed": 3,
+  "scope": "README and two experiment directories; raw inputs already tracked in repository"
+}

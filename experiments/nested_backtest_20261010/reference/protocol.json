@@ -1,0 +1,74 @@
+{
+  "outer_seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "models": [
+    "lr",
+    "rf",
+    "lr_scaled"
+  ],
+  "primary_selection_metric": "log_loss",
+  "secondary_selection_metric": "accuracy",
+  "feature_policy": "same selected columns for all four divisions within each outer fold",
+  "selection_grid": "same 63 family subsets plus ranking/window/correlation sets as prior experiment",
+  "C_grid": {
+    "lr": [
+      1.0
+    ],
+    "rf": [
+      1.0
+    ],
+    "lr_scaled": [
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "short_history": "first fold chronological approximately 60/20/20 of matches, keeping whole dates; second fold rank on latter approximately 40% of initial season and validate on next season",
+  "longer_history": "one ranking season followed by up to two validation seasons, all preceding outer test",
+  "retrospective": true,
+  "limitation": "Historical seasons and the 2025-26 experiment have already been observed; temporal exclusion does not imply prospective untouched data.",
+  "seed": 42,
+  "feature_matrix_sha256": "fe9a887dba1eb9d0554fe6c7dc7f8d421b4071134e730a9731823b7a552f9226",
+  "source_sha256": {
+    "league\\data\\english_raw\\E01920.csv": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61",
+    "league\\data\\english_raw\\E02021.csv": "5afe63f69401457b8354eaacee24f9a3e520b3c3af6329564a9783e20d789c62",
+    "league\\data\\english_raw\\E02122.csv": "335afcbabeb2939fa10ab39ba3e8215072d0b577cb8d0705c1e44c56e934e703",
+    "league\\data\\english_raw\\E02223.csv": "8442792d3b614c94ea3cf381bd2736805889cc1713169035368fff19c3d02380",
+    "league\\data\\english_raw\\E02324.csv": "b2e057b0ed959f198b0f63d2391c01239f3608e6de5db68edab3f88e04d07ff3",
+    "league\\data\\english_raw\\E02425.csv": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4",
+    "league\\data\\english_raw\\E02526.csv": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62",
+    "league\\data\\english_raw\\E11920.csv": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57",
+    "league\\data\\english_raw\\E12021.csv": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073",
+    "league\\data\\english_raw\\E12122.csv": "a181451be4801b9f838daf5f6aaf21e9f09d36042be9e6c15388e71001e772ea",
+    "league\\data\\english_raw\\E12223.csv": "cd38ab0586ea8cb4d573c363ff70749117f116da5b2741e5b0ea37da05860b1b",
+    "league\\data\\english_raw\\E12324.csv": "5737f6cc95c95092b28317f41d3123e2fb09345434efc1c84bbdf15830849ab3",
+    "league\\data\\english_raw\\E12425.csv": "f34c340446c916374be66bdc2fb25b87ee7f2662712ca009653d03ac705535f9",
+    "league\\data\\english_raw\\E12526.csv": "98954c319950f19158624b17a154ef1c56eb7b8d169ef317f28f06d11d0b9a74",
+    "league\\data\\english_raw\\E21920.csv": "9059ede04b5c294511be583b9c85ae2acdf940c3442dd288082a3b0cd7892f94",
+    "league\\data\\english_raw\\E22021.csv": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec",
+    "league\\data\\english_raw\\E22122.csv": "bc3cb4de64d290f682be5941e7512f46216b0758e274ad205547a634d9d70270",
+    "league\\data\\english_raw\\E22223.csv": "c6c1b7366815c4888e62d7f14443f8052291b4ec8702674c1c0caf04ddf9ace5",
+    "league\\data\\english_raw\\E22324.csv": "48e5c8d7f3fbb2a0d3ac956f066b129743789b34fe3db41dbcb31363c22fc303",
+    "league\\data\\english_raw\\E22425.csv": "d4c0ebde3806714fe01a43935409e803ca35118d746d635480eaf9574d561c49",
+    "league\\data\\english_raw\\E22526.csv": "4c96eff8a2f20c5e26015af8609c4f90478ff055f58ab6e137cc3445bf4c67ee",
+    "league\\data\\english_raw\\E31920.csv": "4989515126e1d4cc9ae5276e44e36660fe3632f881a8ae39b4328f66e714bec2",
+    "league\\data\\english_raw\\E32021.csv": "fafff0ee8daf33ca954f94f6856048451ec398688bb6cb357d8aa4d5ded8a3a6",
+    "league\\data\\english_raw\\E32122.csv": "dff7be2d8803eca6f5d0d0f5d3c5e96272c450407388150961920cbd85920bf0",
+    "league\\data\\english_raw\\E32223.csv": "96778f4c63843634b4690e34d740eb58bd474a0f08c6be48c1987ce92093fa5a",
+    "league\\data\\english_raw\\E32324.csv": "10da9da5badeb696d163154b26fa43875bfc9fd96d2ed81c5e4d5958e7d231ef",
+    "league\\data\\english_raw\\E32425.csv": "fd8e1e2483478b14ce7d0cc0317ab4b8fc0abf6e44e76613d855212f8acd760d",
+    "league\\data\\english_raw\\E32526.csv": "eff4fa15cb18857091d1f0666d0b8a6c61eda7a8374feef8f2d8a38244e0e45d"
+  },
+  "code_sha256": {
+    "run_nested_backtest.py": "bdbd1f5297016d222395ea413de15136a8104223810cbe90b78d192ea852fc18",
+    "run_feature_search.py": "70375715280e87809e71fd73d11fd80337cc54e2fc1bcb23ebda6bf03d548fcc"
+  },
+  "completed": true,
+  "elapsed_seconds": 1212.8170518875122
+}

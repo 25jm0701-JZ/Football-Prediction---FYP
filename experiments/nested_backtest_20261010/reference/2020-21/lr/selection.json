@@ -1,0 +1,30 @@
+{
+  "logloss": {
+    "model": "lr",
+    "config": "drop_bottom_5",
+    "C": 1.0,
+    "n_features": 61,
+    "n_matches": 357,
+    "accuracy": 0.49859943977591037,
+    "macro_f1": 0.4236685699251468,
+    "draw_f1": 0.2537313432835821,
+    "log_loss": 1.0224322659348537,
+    "brier": 0.20378570599611895,
+    "min_season_accuracy": 0.49859943977591037,
+    "max_season_log_loss": 1.0224322659348537
+  },
+  "accuracy": {
+    "model": "lr",
+    "config": "window_10_only",
+    "C": 1.0,
+    "n_features": 36,
+    "n_matches": 357,
+    "accuracy": 0.5126050420168067,
+    "macro_f1": 0.4242811908709574,
+    "draw_f1": 0.22033898305084745,
+    "log_loss": 1.030016279058137,
+    "brier": 0.20581961811367655,
+    "min_season_accuracy": 0.5126050420168067,
+    "max_season_log_loss": 1.030016279058137
+  }
+}

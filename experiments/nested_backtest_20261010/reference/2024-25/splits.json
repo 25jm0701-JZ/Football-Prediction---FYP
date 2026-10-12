@@ -1,0 +1,45 @@
+{
+  "outer_test_season": "2024-25",
+  "outer_train_n": 9916,
+  "outer_test_n": 2036,
+  "outer_test_start": "2024-08-09",
+  "ranking_training": {
+    "n": 3808,
+    "first_date": "2019-08-02",
+    "last_date": "2021-05-23"
+  },
+  "ranking_evaluation": {
+    "block": "2021-22",
+    "n": 2036,
+    "first_date": "2021-08-06",
+    "last_date": "2022-05-22"
+  },
+  "validation": [
+    {
+      "block": "2022-23",
+      "training": {
+        "n": 5844,
+        "first_date": "2019-08-02",
+        "last_date": "2022-05-22"
+      },
+      "evaluation": {
+        "n": 2036,
+        "first_date": "2022-07-29",
+        "last_date": "2023-05-28"
+      }
+    },
+    {
+      "block": "2023-24",
+      "training": {
+        "n": 7880,
+        "first_date": "2019-08-02",
+        "last_date": "2023-05-28"
+      },
+      "evaluation": {
+        "n": 2036,
+        "first_date": "2023-08-04",
+        "last_date": "2024-05-19"
+      }
+    }
+  ]
+}

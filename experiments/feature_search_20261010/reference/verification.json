@@ -1,0 +1,15 @@
+{
+  "models_verified": [
+    "lr__logloss",
+    "lr__accuracy",
+    "rf__logloss",
+    "rf__accuracy",
+    "lr_scaled__logloss",
+    "lr_scaled__accuracy"
+  ],
+  "invariant_tests_passed": 5,
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "sklearn": "1.9.0",
+  "numpy": "2.4.6",
+  "pandas": "3.0.5"
+}

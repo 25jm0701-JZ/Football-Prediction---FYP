@@ -1,0 +1,37 @@
+{
+  "folds": [
+    {
+      "season": "2020-21",
+      "configurations": 380,
+      "validation_fits_before_cache": 380
+    },
+    {
+      "season": "2021-22",
+      "configurations": 379,
+      "validation_fits_before_cache": 379
+    },
+    {
+      "season": "2022-23",
+      "configurations": 379,
+      "validation_fits_before_cache": 379
+    },
+    {
+      "season": "2023-24",
+      "configurations": 379,
+      "validation_fits_before_cache": 758
+    },
+    {
+      "season": "2024-25",
+      "configurations": 378,
+      "validation_fits_before_cache": 756
+    },
+    {
+      "season": "2025-26",
+      "configurations": 380,
+      "validation_fits_before_cache": 760
+    }
+  ],
+  "total_configurations": 2275,
+  "total_validation_fits_before_cache": 3412,
+  "unique_validation_fits": 2383
+}

@@ -1,0 +1,6 @@
+results/
+results_full/
+validation_cache/
+checks/
+__pycache__/
+*.log

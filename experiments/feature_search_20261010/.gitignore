@@ -1,0 +1,5 @@
+results/
+checks/
+__pycache__/
+literature/*.txt
+literature/*.png

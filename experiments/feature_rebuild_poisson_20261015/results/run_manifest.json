@@ -4,7 +4,6 @@
     "date": "2026-10-15",
     "objective": "Fresh feature importance and candidate selection from original clean66 LR; freeze the newly selected columns; evaluate all six seasons and both Poisson fusions.",
     "selection_mode": "fresh one-time development search, then fixed selected columns across seasons",
-    "preassigned_feature_count": null,
     "lr": {
       "C": 1.0,
       "max_iter": 4000,
@@ -62,7 +61,7 @@
   },
   "code_hashes": {
     "experiments\\feature_rebuild_poisson_20261015\\run_experiment.py": "f6e00aed89297d40c5de476992940eeb7ebfa02cbedb9f962caff33a34df230c",
-    "experiments\\feature_rebuild_poisson_20261015\\config.json": "f4163a0b8a50b24e7bcfb13f1b2555dff6a633e8843cabca5ca5b2388cf215ca",
+    "experiments\\feature_rebuild_poisson_20261015\\config.json": "ff9af8406eb6a152299d3d71f07864607223815d3cb1c0803bc37882931f694f",
     "experiments\\feature_search_20261010\\run_feature_search.py": "70375715280e87809e71fd73d11fd80337cc54e2fc1bcb23ebda6bf03d548fcc",
     "experiments\\lr_poisson_reweight_20261012\\fusion_core.py": "3d0f00ebd97f0951c1f39bfb1fd80d3d003425b7f748ddd23a15baefecab5fef",
     "scripts\\tracka_poisson_goals.py": "5dda455be835d23f0630a46da5a5b049cfceaee79463e4cebae62b3dcd4561b4",

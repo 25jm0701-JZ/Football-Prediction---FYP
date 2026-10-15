@@ -2,7 +2,6 @@
   "date": "2026-10-15",
   "objective": "Fresh feature importance and candidate selection from original clean66 LR; freeze the newly selected columns; evaluate all six seasons and both Poisson fusions.",
   "selection_mode": "fresh one-time development search, then fixed selected columns across seasons",
-  "preassigned_feature_count": null,
   "lr": {"C": 1.0, "max_iter": 4000, "solver": "lbfgs", "random_state": 42, "scaling": false, "imputer": "training-only mean, keep_empty_features=True"},
   "ranking_season": "2022-23",
   "validation_seasons": ["2023-24", "2024-25"],

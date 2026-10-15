@@ -120,5 +120,13 @@
   "retired_file_hashes_checked_against_base_commit": true,
   "data_values_and_legacy_algorithm_unchanged": true,
   "recorded_input_byte_preservation": ".gitattributes disables newline conversion for audited inputs and legacy feature source",
-  "note": "The publication rechecks saved completed results and unit tests; it does not claim a fresh full feature search in this cleanup task."
+  "note": "The publication rechecks saved completed results and unit tests; it does not claim a fresh full feature search in this cleanup task.",
+  "editorial_update": {
+    "date": "2026-10-15",
+    "description": "Selection wording now states that feature selection produced 36 features from 66 inputs.",
+    "checked_text_files": 25,
+    "removed_redundant_descriptive_metadata": true,
+    "model_files_unchanged": true,
+    "numerical_result_audit_passed": true
+  }
 }

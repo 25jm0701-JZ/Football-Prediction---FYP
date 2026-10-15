@@ -71,12 +71,12 @@ def build(out, development):
     lines = [f'# 从原始 66 特征重新筛选，再验证泛化与泊松融合', '',
         '实验日期：2026-10-15。全部训练、重要性排序、候选搜索和逐场预测均在本次本地重新执行。', '',
         '## 先回答研究问题', '',
-        f"1. **重新筛选得到什么？** 从 66 列出发，在 {len(grid)} 个候选组合中，以历史验证 Log Loss 为主指标，新一轮仍选中 `{selected['record']['config']}`：{count} 列。没有读取旧选择作为本次答案，也没有要求一定选出 36 列。",
+        f"1. **重新筛选得到什么？** 从 66 列出发，在 {len(grid)} 个候选组合中，以历史验证 Log Loss 为主指标，筛选得到 `{selected['record']['config']}`：{count} 列。",
         f"2. **简化 LR 是否优于原版？** 六季总体准确率 {original.accuracy:.3%} → {reduced.accuracy:.3%}，净多正确 {int(reduced.correct-original.correct)} 场；LL {original.log_loss:.6f} → {reduced.log_loss:.6f}，Brier 也降低。主指标改善，因此继续检验融合。但 Macro F1、平局 F1 下降，不能称为所有指标全面更好。",
         f"3. **能否认为准确率稳定提升？** 日期聚类区间下，六季准确率差的 95% CI 包含零；六季 LL 差的区间不包含零。按六个赛季重抽的敏感性区间另列，不能挑更乐观的区间下结论。",
         '4. **简化 LR 指导泊松后是否改善？** 相比纯泊松，赛果 LL、比分 NLL、主客及总进球 MAE 均改善；精确比分命中率点估计提高，但区间包含零。',
         '5. **是否超过原版 LR＋泊松？** 比分 NLL 进一步降低，但精确比分命中率下降，主客及总进球 MAE 也略变差，相关差异区间包含零。因此只支持概率评分进一步改善，不支持所有比分指标进一步改善。', '',
-        '## 1. 实验流程与事先确定的规则', '',
+        '## 1. 实验流程与筛选方法', '',
         '原始 66 特征 LR → 重新做重要性与候选组合验证 → 冻结新胜出的列集 → 固定列集六季 walk-forward 对照 → 在主指标改善后分析泊松融合。', '',
         '- 原版和简化版均为训练集均值插补、未标准化 LogisticRegression，C=1、lbfgs、max_iter=4000、种子42。只改变输入列，避免把标准化或调参收益归于特征删减。',
         '- 排序：用 2019/20–2021/22 拟合，在 2022/23 做五次按联赛分块的置换重要性；组合验证：分别用此前全部赛季训练，验证 2023/24 和 2024/25。按合并验证 Log Loss 选定，2025/26 不参与候选排序或选择。',
@@ -160,7 +160,7 @@ def build(out, development):
         '- metrics_all_scopes.csv：整体、六季、四联赛、24个季×联赛及实际赛果分层。',
         '- paired_intervals.csv、postselection_2025_26_intervals.csv：配对区间。',
         '- models/：本次训练的12个LR模型及各自特征列表；poisson_parameters.csv：六季泊松参数。',
-        '- protocol_tests.log：新增5项源文件赛季、训练时间边界及不预设36列的测试。此前融合数学12项和特征时间边界5项测试已通过；本次另做完整保存结果审计。', '',
+        '- protocol_tests.log：新增5项源文件赛季、训练时间边界及特征筛选规则测试。此前融合数学12项和特征时间边界5项测试已通过；本次另做完整保存结果审计。', '',
         '## 附：本次新选中列清单', '', '```text', *selected['feature_names'], '```', '']
     (out / 'report_CN.md').write_text('\n'.join(lines), encoding='utf-8')
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'axes.spines.top': False, 'axes.spines.right': False, 'font.size': 10})

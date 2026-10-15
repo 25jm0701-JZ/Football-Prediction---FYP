@@ -1,0 +1,16 @@
+DATA {"matches": 13988, "features": 66, "original_effective_features": 67, "season_fixes": 35, "same_day_results_excluded": true, "seasons": {"2019-20": 1772, "2020-21": 2036, "2021-22": 2036, "2022-23": 2036, "2023-24": 2036, "2024-25": 2036, "2025-26": 2036}, "date_min": "2019-08-02 00:00:00", "date_max": "2026-05-24 00:00:00"}
+FRESH SELECTION: window_10_only, 36/66 features
+FOLD 2020-21: train=1772 test=2036 selected=36
+FOLD 2021-22: train=3808 test=2036 selected=36
+FOLD 2022-23: train=5844 test=2036 selected=36
+FOLD 2023-24: train=7880 test=2036 selected=36
+FOLD 2024-25: train=9916 test=2036 selected=36
+FOLD 2025-26: train=11952 test=2036 selected=36
+Computing paired date/season cluster intervals...
+  scope group           model  n_matches  correct  accuracy  log_loss    brier  exact_score_accuracy  score_nll  home_goal_mae  away_goal_mae  total_goal_mae  home_within_1  away_within_1  total_within_1  macro_f1  draw_f1
+overall   ALL         poisson      12216     5133  0.420187  1.093788 0.221167              0.118533   3.005417       1.046577       0.942390        1.394612       0.549525       0.566716        0.411346  0.297575 0.000000
+overall   ALL            lr66      12216     5574  0.456287  1.056095 0.211983                   NaN        NaN            NaN            NaN             NaN            NaN            NaN             NaN  0.352288 0.042068
+overall   ALL     lr_selected      12216     5628  0.460707  1.053133 0.211414                   NaN        NaN            NaN            NaN             NaN            NaN            NaN             NaN  0.349281 0.026586
+overall   ALL        fusion66      12216     5574  0.456287  1.056095 0.211983              0.121807   2.967725       0.999054       0.923878        1.375395       0.566961       0.572037        0.420842  0.352288 0.042068
+overall   ALL fusion_selected      12216     5628  0.460707  1.053133 0.211414              0.120498   2.964762       0.999385       0.924141        1.375449       0.568844       0.569908        0.420596  0.349281 0.026586
+COMPLETE: C:\Users\-jmmmm\Documents\FYP\experiments\feature_rebuild_poisson_20261015\results

@@ -1,0 +1,13 @@
+DATA {"matches": 5, "features": 66, "original_effective_features": 67, "season_fixes": 5, "same_day_results_excluded": true, "seasons": {"2022-23": 5}, "date_min": "2022-07-28 00:00:00", "date_max": "2022-07-30 00:00:00"}
+DATA {"matches": 5, "features": 66, "original_effective_features": 67, "season_fixes": 5, "same_day_results_excluded": true, "seasons": {"2022-23": 5}, "date_min": "2022-07-28 00:00:00", "date_max": "2022-07-30 00:00:00"}
+test_current_and_same_day_outcomes_cannot_change_features (__main__.TemporalInvariants.test_current_and_same_day_outcomes_cannot_change_features) ... ok
+test_group_permutation_preserves_joint_rows_and_league (__main__.TemporalInvariants.test_group_permutation_preserves_joint_rows_and_league) ... ok
+DATA {"matches": 5, "features": 66, "original_effective_features": 67, "season_fixes": 5, "same_day_results_excluded": true, "seasons": {"2022-23": 5}, "date_min": "2022-07-28 00:00:00", "date_max": "2022-07-30 00:00:00"}
+test_july_uses_source_season_and_league_is_not_duplicated (__main__.TemporalInvariants.test_july_uses_source_season_and_league_is_not_duplicated) ... ok
+test_metrics_use_away_draw_home_and_existing_brier_convention (__main__.TemporalInvariants.test_metrics_use_away_draw_home_and_existing_brier_convention) ... ok
+test_validation_training_excludes_evaluation_and_future (__main__.TemporalInvariants.test_validation_training_excludes_evaluation_and_future) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.083s
+
+OK

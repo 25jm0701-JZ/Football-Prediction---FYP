@@ -1,0 +1,208 @@
+{
+  "complete": true,
+  "rows_total": 13988,
+  "rows_evaluated": 12216,
+  "features": 66,
+  "feature_names": [
+    "home_team_state_points_5",
+    "home_attack_strength_5",
+    "home_defense_strength_5",
+    "home_goals_for_5",
+    "home_goals_against_5",
+    "home_goal_differential_5",
+    "home_win_rate_5",
+    "home_draw_rate_5",
+    "home_loss_rate_5",
+    "home_win_margin_goals_5",
+    "home_loss_margin_goals_5",
+    "home_avg_shots_5",
+    "home_avg_sot_5",
+    "home_shot_accuracy_5",
+    "home_conversion_rate_5",
+    "away_team_state_points_5",
+    "away_attack_strength_5",
+    "away_defense_strength_5",
+    "away_goals_for_5",
+    "away_goals_against_5",
+    "away_goal_differential_5",
+    "away_win_rate_5",
+    "away_draw_rate_5",
+    "away_loss_rate_5",
+    "away_win_margin_goals_5",
+    "away_loss_margin_goals_5",
+    "away_avg_shots_5",
+    "away_avg_sot_5",
+    "away_shot_accuracy_5",
+    "away_conversion_rate_5",
+    "home_team_state_points_10",
+    "home_attack_strength_10",
+    "home_defense_strength_10",
+    "home_goals_for_10",
+    "home_goals_against_10",
+    "home_goal_differential_10",
+    "home_win_rate_10",
+    "home_draw_rate_10",
+    "home_loss_rate_10",
+    "home_win_margin_goals_10",
+    "home_loss_margin_goals_10",
+    "home_avg_shots_10",
+    "home_avg_sot_10",
+    "home_shot_accuracy_10",
+    "home_conversion_rate_10",
+    "away_team_state_points_10",
+    "away_attack_strength_10",
+    "away_defense_strength_10",
+    "away_goals_for_10",
+    "away_goals_against_10",
+    "away_goal_differential_10",
+    "away_win_rate_10",
+    "away_draw_rate_10",
+    "away_loss_rate_10",
+    "away_win_margin_goals_10",
+    "away_loss_margin_goals_10",
+    "away_avg_shots_10",
+    "away_avg_sot_10",
+    "away_shot_accuracy_10",
+    "away_conversion_rate_10",
+    "h2h_home_wins",
+    "h2h_away_wins",
+    "h2h_draws",
+    "h2h_home_avg_goals",
+    "h2h_away_avg_goals",
+    "league_level"
+  ],
+  "folds": {
+    "2020-21": 2036,
+    "2021-22": 2036,
+    "2022-23": 2036,
+    "2023-24": 2036,
+    "2024-25": 2036,
+    "2025-26": 2036
+  },
+  "models": "LoukasPoissonModel.fit / clean 66 fixed features / LR(C=1, lbfgs)",
+  "class_order": [
+    0,
+    1,
+    2
+  ],
+  "tail_tolerance": 1e-12,
+  "python": "3.11.0",
+  "pandas": "2.3.2",
+  "numpy": "2.4.6",
+  "scipy": "1.16.1",
+  "sklearn": "1.7.1",
+  "inputs": [
+    {
+      "path": "league\\data\\english_raw\\E01920.csv",
+      "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02021.csv",
+      "sha256": "5afe63f69401457b8354eaacee24f9a3e520b3c3af6329564a9783e20d789c62"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02122.csv",
+      "sha256": "335afcbabeb2939fa10ab39ba3e8215072d0b577cb8d0705c1e44c56e934e703"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02223.csv",
+      "sha256": "8442792d3b614c94ea3cf381bd2736805889cc1713169035368fff19c3d02380"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02324.csv",
+      "sha256": "b2e057b0ed959f198b0f63d2391c01239f3608e6de5db68edab3f88e04d07ff3"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02425.csv",
+      "sha256": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4"
+    },
+    {
+      "path": "league\\data\\english_raw\\E02526.csv",
+      "sha256": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62"
+    },
+    {
+      "path": "league\\data\\english_raw\\E11920.csv",
+      "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12021.csv",
+      "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12122.csv",
+      "sha256": "a181451be4801b9f838daf5f6aaf21e9f09d36042be9e6c15388e71001e772ea"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12223.csv",
+      "sha256": "cd38ab0586ea8cb4d573c363ff70749117f116da5b2741e5b0ea37da05860b1b"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12324.csv",
+      "sha256": "5737f6cc95c95092b28317f41d3123e2fb09345434efc1c84bbdf15830849ab3"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12425.csv",
+      "sha256": "f34c340446c916374be66bdc2fb25b87ee7f2662712ca009653d03ac705535f9"
+    },
+    {
+      "path": "league\\data\\english_raw\\E12526.csv",
+      "sha256": "98954c319950f19158624b17a154ef1c56eb7b8d169ef317f28f06d11d0b9a74"
+    },
+    {
+      "path": "league\\data\\english_raw\\E21920.csv",
+      "sha256": "9059ede04b5c294511be583b9c85ae2acdf940c3442dd288082a3b0cd7892f94"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22021.csv",
+      "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22122.csv",
+      "sha256": "bc3cb4de64d290f682be5941e7512f46216b0758e274ad205547a634d9d70270"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22223.csv",
+      "sha256": "c6c1b7366815c4888e62d7f14443f8052291b4ec8702674c1c0caf04ddf9ace5"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22324.csv",
+      "sha256": "48e5c8d7f3fbb2a0d3ac956f066b129743789b34fe3db41dbcb31363c22fc303"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22425.csv",
+      "sha256": "d4c0ebde3806714fe01a43935409e803ca35118d746d635480eaf9574d561c49"
+    },
+    {
+      "path": "league\\data\\english_raw\\E22526.csv",
+      "sha256": "4c96eff8a2f20c5e26015af8609c4f90478ff055f58ab6e137cc3445bf4c67ee"
+    },
+    {
+      "path": "league\\data\\english_raw\\E31920.csv",
+      "sha256": "4989515126e1d4cc9ae5276e44e36660fe3632f881a8ae39b4328f66e714bec2"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32021.csv",
+      "sha256": "fafff0ee8daf33ca954f94f6856048451ec398688bb6cb357d8aa4d5ded8a3a6"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32122.csv",
+      "sha256": "dff7be2d8803eca6f5d0d0f5d3c5e96272c450407388150961920cbd85920bf0"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32223.csv",
+      "sha256": "96778f4c63843634b4690e34d740eb58bd474a0f08c6be48c1987ce92093fa5a"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32324.csv",
+      "sha256": "10da9da5badeb696d163154b26fa43875bfc9fd96d2ed81c5e4d5958e7d231ef"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32425.csv",
+      "sha256": "fd8e1e2483478b14ce7d0cc0317ab4b8fc0abf6e44e76613d855212f8acd760d"
+    },
+    {
+      "path": "league\\data\\english_raw\\E32526.csv",
+      "sha256": "eff4fa15cb18857091d1f0666d0b8a6c61eda7a8374feef8f2d8a38244e0e45d"
+    }
+  ]
+}

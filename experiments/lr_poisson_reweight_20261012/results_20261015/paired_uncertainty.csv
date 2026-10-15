@@ -1,0 +1,9 @@
+metric,fusion_minus_poisson,ci95_lower,ci95_upper,bootstrap_method,bootstrap_repeats
+true_score_nll,-0.03769233013312386,-0.04409229029851795,-0.03095951615621306,paired date clusters stratified by season,1000
+exact_score_hit,0.003274394237066143,-0.002109903099315007,0.008539891747569443,paired date clusters stratified by season,1000
+home_abs_error,-0.04752300049821448,-0.05229036552135638,-0.04281393385867999,paired date clusters stratified by season,1000
+away_abs_error,-0.01851278449206195,-0.02293593875396207,-0.01401284545276979,paired date clusters stratified by season,1000
+total_abs_error,-0.01921694603644394,-0.02103826608014033,-0.01734251634772946,paired date clusters stratified by season,1000
+home_within_1,0.01743614931237721,0.01297252496646246,0.02183602802386107,paired date clusters stratified by season,1000
+away_within_1,0.005320890635232482,0.0009933851190280965,0.009608518197508742,paired date clusters stratified by season,1000
+total_within_1,0.009495743287491814,0.006587096289281487,0.0122668654201985,paired date clusters stratified by season,1000

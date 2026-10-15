@@ -1,0 +1,26 @@
+DATA {"matches": 13988, "features": 66, "original_effective_features": 67, "season_fixes": 35, "same_day_results_excluded": true, "seasons": {"2019-20": 1772, "2020-21": 2036, "2021-22": 2036, "2022-23": 2036, "2023-24": 2036, "2024-25": 2036, "2025-26": 2036}, "date_min": "2019-08-02 00:00:00", "date_max": "2026-05-24 00:00:00"}
+IMPORTANCE lr 16/66
+IMPORTANCE lr 32/66
+IMPORTANCE lr 48/66
+IMPORTANCE lr 64/66
+RANKING lr [{'feature': 'home_avg_sot_10', 'permutation_logloss_mean': 0.02072784965307779}, {'feature': 'away_avg_sot_10', 'permutation_logloss_mean': 0.015983785071039636}, {'feature': 'away_avg_shots_5', 'permutation_logloss_mean': 0.014878066896753061}, {'feature': 'away_attack_strength_5', 'permutation_logloss_mean': 0.013946816352903024}, {'feature': 'away_goal_differential_5', 'permutation_logloss_mean': 0.011707222400758699}, {'feature': 'away_avg_sot_5', 'permutation_logloss_mean': 0.007996451728585452}, {'feature': 'away_avg_shots_10', 'permutation_logloss_mean': 0.007045129342713441}, {'feature': 'away_goal_differential_10', 'permutation_logloss_mean': 0.006755024567779611}]
+GRID lr 8/76, best=all_66 C=1.0 LL=1.040944
+GRID lr 16/76, best=all_66 C=1.0 LL=1.040944
+GRID lr 24/76, best=all_66 C=1.0 LL=1.040944
+GRID lr 32/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 40/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 48/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 56/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 64/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 72/76, best=groups__form__h2h__shooting C=1.0 LL=1.039272
+GRID lr 76/76, best=window_10_only C=1.0 LL=1.038277
+FINAL {'model': 'lr', 'config': 'all_66', 'C': 1.0, 'n_features': 66, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4670923379174853, 'macro_f1': 0.3401876220888749, 'draw_f1': np.float64(0.0), 'log_loss': 1.0519165466416331, 'brier': np.float64(0.2111676435694471)}
+FINAL {'model': 'lr', 'config': 'selected_logloss', 'C': 1.0, 'n_features': 36, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4720039292730845, 'macro_f1': 0.3427047634602694, 'draw_f1': np.float64(0.0), 'log_loss': 1.0497894846378006, 'brier': np.float64(0.21075514060441114)}
+FINAL {'model': 'lr', 'config': 'selected_accuracy', 'C': 1.0, 'n_features': 36, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4720039292730845, 'macro_f1': 0.3427047634602694, 'draw_f1': np.float64(0.0), 'log_loss': 1.0497894846378006, 'brier': np.float64(0.21075514060441114)}
+FINAL {'model': 'lr', 'config': 'drop_form', 'C': 1.0, 'n_features': 50, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4715127701375246, 'macro_f1': 0.3435368845679048, 'draw_f1': np.float64(0.0037735849056603774), 'log_loss': 1.0504199263666971, 'brier': np.float64(0.21085827438953125)}
+FINAL {'model': 'lr', 'config': 'drop_goals_strength', 'C': 1.0, 'n_features': 46, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.468565815324165, 'macro_f1': 0.34076239439452943, 'draw_f1': np.float64(0.0), 'log_loss': 1.0512156178333805, 'brier': np.float64(0.21098282152249712)}
+FINAL {'model': 'lr', 'config': 'drop_h2h', 'C': 1.0, 'n_features': 61, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4636542239685658, 'macro_f1': 0.3342931294858397, 'draw_f1': np.float64(0.0), 'log_loss': 1.0510223472118132, 'brier': np.float64(0.21111567497749634)}
+FINAL {'model': 'lr', 'config': 'drop_league', 'C': 1.0, 'n_features': 65, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.46463654223968565, 'macro_f1': 0.33750720870255063, 'draw_f1': np.float64(0.0), 'log_loss': 1.0511112987644846, 'brier': np.float64(0.2110017300735201)}
+FINAL {'model': 'lr', 'config': 'drop_margins', 'C': 1.0, 'n_features': 58, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4715127701375246, 'macro_f1': 0.34413456440531215, 'draw_f1': np.float64(0.003738317757009346), 'log_loss': 1.0502364893943246, 'brier': np.float64(0.21076945039622905)}
+FINAL {'model': 'lr', 'config': 'drop_shooting', 'C': 1.0, 'n_features': 50, 'season': '2025-26', 'n_matches': 2036, 'accuracy': 0.4670923379174853, 'macro_f1': 0.33401877971813493, 'draw_f1': np.float64(0.0), 'log_loss': 1.0574942064849597, 'brier': np.float64(0.2123819586040528)}
+COMPLETE in 204.8s

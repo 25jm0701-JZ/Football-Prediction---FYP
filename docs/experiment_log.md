@@ -1,3 +1,5 @@
+> **历史原始日志。** 开头的 58.60%、68.42%、高 ROI 与部分深度学习结果已被泄漏审查否定；旧特征数和任务范围也不是当前主线。先读[实验沿革](experiment_history_CN.md)、[当前主线](research_mainline_CN.md)与[泄漏审查](leakage_clean_review.md)。2026-10 的新实验见实验沿革末三项与当前主实验，不把不同口径数值直接拼接。
+
 # Experiment Log — League Match Prediction
 
 ## Project Overview (Two-Track Structure)

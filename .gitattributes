@@ -1,0 +1,4 @@
+# Saved research manifests hash these inputs and this legacy source byte-for-byte.
+# Preserve their recorded CRLF bytes rather than converting them on checkout.
+league/data/english_raw/*.csv -text
+scripts/atta_mills_tracka_english4.py -text

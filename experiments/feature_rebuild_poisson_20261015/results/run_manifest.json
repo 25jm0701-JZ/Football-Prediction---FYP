@@ -1,0 +1,345 @@
+{
+  "complete": true,
+  "config": {
+    "date": "2026-10-15",
+    "objective": "Fresh feature importance and candidate selection from original clean66 LR; freeze the newly selected columns; evaluate all six seasons and both Poisson fusions.",
+    "selection_mode": "fresh one-time development search, then fixed selected columns across seasons",
+    "preassigned_feature_count": null,
+    "lr": {
+      "C": 1.0,
+      "max_iter": 4000,
+      "solver": "lbfgs",
+      "random_state": 42,
+      "scaling": false,
+      "imputer": "training-only mean, keep_empty_features=True"
+    },
+    "ranking_season": "2022-23",
+    "validation_seasons": [
+      "2023-24",
+      "2024-25"
+    ],
+    "primary_selection_metric": "log_loss",
+    "permutation_repeats": 5,
+    "candidates": "feature-family combinations, permutation-ranked subsets, positive-importance subset, window-only subsets, correlation pruning; as implemented in original feature-search code",
+    "test_seasons": [
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "season_assignment": "raw CSV filename is authoritative; never calendar-month boundaries",
+    "poisson": {
+      "estimator": "original LoukasPoissonModel",
+      "smoothing": 0.05,
+      "joint_tail_tolerance": 1e-12
+    },
+    "fusion": {
+      "alpha": 1.0,
+      "class_order": [
+        "away",
+        "draw",
+        "home"
+      ],
+      "formula": "q_LR(class)*P(score)/P(class)"
+    },
+    "bootstrap": {
+      "repeats": 4000,
+      "seed": 123,
+      "primary": "paired whole-date clusters stratified by season",
+      "sensitivity": "paired whole-season clusters, six seasons"
+    },
+    "retrospective": true,
+    "interpretation": "Development and all six historical seasons have previously been inspected. Full-range fixed-subset comparisons are retrospective. No outer result is used to change the new selection, LR settings, or fusion.",
+    "comparison_models": [
+      "poisson",
+      "lr66",
+      "lr_selected",
+      "fusion66",
+      "fusion_selected"
+    ]
+  },
+  "code_hashes": {
+    "experiments\\feature_rebuild_poisson_20261015\\run_experiment.py": "f6e00aed89297d40c5de476992940eeb7ebfa02cbedb9f962caff33a34df230c",
+    "experiments\\feature_rebuild_poisson_20261015\\config.json": "f4163a0b8a50b24e7bcfb13f1b2555dff6a633e8843cabca5ca5b2388cf215ca",
+    "experiments\\feature_search_20261010\\run_feature_search.py": "70375715280e87809e71fd73d11fd80337cc54e2fc1bcb23ebda6bf03d548fcc",
+    "experiments\\lr_poisson_reweight_20261012\\fusion_core.py": "3d0f00ebd97f0951c1f39bfb1fd80d3d003425b7f748ddd23a15baefecab5fef",
+    "scripts\\tracka_poisson_goals.py": "5dda455be835d23f0630a46da5a5b049cfceaee79463e4cebae62b3dcd4561b4",
+    "scripts\\atta_mills_tracka_english4.py": "28faef4ee9e28099cde19ac6bcbf7ed3565802400cc1b3cdc9a2c6ac47e655f9",
+    "league\\src\\data_loader.py": "ed3bfc6e95dee751c434ccdd02a2ea2ec3f43decbfbbc4b2b3e16f88b28f4734"
+  },
+  "python": "3.11.0",
+  "libraries": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.2",
+    "scipy": "1.16.1",
+    "sklearn": "1.7.1",
+    "joblib": "1.5.2"
+  },
+  "command": [
+    "experiments/feature_rebuild_poisson_20261015/run_experiment.py"
+  ],
+  "inputs": [
+    {
+      "source_file": "E01920.csv",
+      "assigned_season": "2019-20",
+      "matches": 380,
+      "date_min": "2019-08-09",
+      "date_max": "2020-07-26",
+      "july_matches": 66,
+      "sha256": "100037618b94f94057400bb02bf6bac4ef74ddaa58cde4b38370839c39caee61"
+    },
+    {
+      "source_file": "E02021.csv",
+      "assigned_season": "2020-21",
+      "matches": 380,
+      "date_min": "2020-09-12",
+      "date_max": "2021-05-23",
+      "july_matches": 0,
+      "sha256": "5afe63f69401457b8354eaacee24f9a3e520b3c3af6329564a9783e20d789c62"
+    },
+    {
+      "source_file": "E02122.csv",
+      "assigned_season": "2021-22",
+      "matches": 380,
+      "date_min": "2021-08-13",
+      "date_max": "2022-05-22",
+      "july_matches": 0,
+      "sha256": "335afcbabeb2939fa10ab39ba3e8215072d0b577cb8d0705c1e44c56e934e703"
+    },
+    {
+      "source_file": "E02223.csv",
+      "assigned_season": "2022-23",
+      "matches": 380,
+      "date_min": "2022-08-05",
+      "date_max": "2023-05-28",
+      "july_matches": 0,
+      "sha256": "8442792d3b614c94ea3cf381bd2736805889cc1713169035368fff19c3d02380"
+    },
+    {
+      "source_file": "E02324.csv",
+      "assigned_season": "2023-24",
+      "matches": 380,
+      "date_min": "2023-08-11",
+      "date_max": "2024-05-19",
+      "july_matches": 0,
+      "sha256": "b2e057b0ed959f198b0f63d2391c01239f3608e6de5db68edab3f88e04d07ff3"
+    },
+    {
+      "source_file": "E02425.csv",
+      "assigned_season": "2024-25",
+      "matches": 380,
+      "date_min": "2024-08-16",
+      "date_max": "2025-05-25",
+      "july_matches": 0,
+      "sha256": "d0c8ce4a96d886cf60cf101f570f4a3893844226f91c7bd769eb568c49edbfa4"
+    },
+    {
+      "source_file": "E02526.csv",
+      "assigned_season": "2025-26",
+      "matches": 380,
+      "date_min": "2025-08-15",
+      "date_max": "2026-05-24",
+      "july_matches": 0,
+      "sha256": "3e3a8352f9ada6789c508d6ca184424421fed56a30400904a4a327c583407e62"
+    },
+    {
+      "source_file": "E11920.csv",
+      "assigned_season": "2019-20",
+      "matches": 552,
+      "date_min": "2019-08-02",
+      "date_max": "2020-07-22",
+      "july_matches": 77,
+      "sha256": "f31450c623c0b74b89692584a85924cc652d33ec89757acf4b2dda5e26261d57"
+    },
+    {
+      "source_file": "E12021.csv",
+      "assigned_season": "2020-21",
+      "matches": 552,
+      "date_min": "2020-09-11",
+      "date_max": "2021-05-08",
+      "july_matches": 0,
+      "sha256": "cf93295e310c60e5b97ae7466d772f8ec6a908ad401e38fceb7e8617369d5073"
+    },
+    {
+      "source_file": "E12122.csv",
+      "assigned_season": "2021-22",
+      "matches": 552,
+      "date_min": "2021-08-06",
+      "date_max": "2022-05-07",
+      "july_matches": 0,
+      "sha256": "a181451be4801b9f838daf5f6aaf21e9f09d36042be9e6c15388e71001e772ea"
+    },
+    {
+      "source_file": "E12223.csv",
+      "assigned_season": "2022-23",
+      "matches": 552,
+      "date_min": "2022-07-29",
+      "date_max": "2023-05-08",
+      "july_matches": 11,
+      "sha256": "cd38ab0586ea8cb4d573c363ff70749117f116da5b2741e5b0ea37da05860b1b"
+    },
+    {
+      "source_file": "E12324.csv",
+      "assigned_season": "2023-24",
+      "matches": 552,
+      "date_min": "2023-08-04",
+      "date_max": "2024-05-04",
+      "july_matches": 0,
+      "sha256": "5737f6cc95c95092b28317f41d3123e2fb09345434efc1c84bbdf15830849ab3"
+    },
+    {
+      "source_file": "E12425.csv",
+      "assigned_season": "2024-25",
+      "matches": 552,
+      "date_min": "2024-08-09",
+      "date_max": "2025-05-03",
+      "july_matches": 0,
+      "sha256": "f34c340446c916374be66bdc2fb25b87ee7f2662712ca009653d03ac705535f9"
+    },
+    {
+      "source_file": "E12526.csv",
+      "assigned_season": "2025-26",
+      "matches": 552,
+      "date_min": "2025-08-08",
+      "date_max": "2026-05-02",
+      "july_matches": 0,
+      "sha256": "98954c319950f19158624b17a154ef1c56eb7b8d169ef317f28f06d11d0b9a74"
+    },
+    {
+      "source_file": "E21920.csv",
+      "assigned_season": "2019-20",
+      "matches": 400,
+      "date_min": "2019-08-03",
+      "date_max": "2020-03-10",
+      "july_matches": 0,
+      "sha256": "9059ede04b5c294511be583b9c85ae2acdf940c3442dd288082a3b0cd7892f94"
+    },
+    {
+      "source_file": "E22021.csv",
+      "assigned_season": "2020-21",
+      "matches": 552,
+      "date_min": "2020-09-12",
+      "date_max": "2021-05-09",
+      "july_matches": 0,
+      "sha256": "b6cd8d6280f54fc86cab646c74b65d40b31a2300f56a00a8df9e9d3549304cec"
+    },
+    {
+      "source_file": "E22122.csv",
+      "assigned_season": "2021-22",
+      "matches": 552,
+      "date_min": "2021-08-07",
+      "date_max": "2022-04-30",
+      "july_matches": 0,
+      "sha256": "bc3cb4de64d290f682be5941e7512f46216b0758e274ad205547a634d9d70270"
+    },
+    {
+      "source_file": "E22223.csv",
+      "assigned_season": "2022-23",
+      "matches": 552,
+      "date_min": "2022-07-30",
+      "date_max": "2023-05-07",
+      "july_matches": 12,
+      "sha256": "c6c1b7366815c4888e62d7f14443f8052291b4ec8702674c1c0caf04ddf9ace5"
+    },
+    {
+      "source_file": "E22324.csv",
+      "assigned_season": "2023-24",
+      "matches": 552,
+      "date_min": "2023-08-05",
+      "date_max": "2024-04-27",
+      "july_matches": 0,
+      "sha256": "48e5c8d7f3fbb2a0d3ac956f066b129743789b34fe3db41dbcb31363c22fc303"
+    },
+    {
+      "source_file": "E22425.csv",
+      "assigned_season": "2024-25",
+      "matches": 552,
+      "date_min": "2024-08-09",
+      "date_max": "2025-05-03",
+      "july_matches": 0,
+      "sha256": "d4c0ebde3806714fe01a43935409e803ca35118d746d635480eaf9574d561c49"
+    },
+    {
+      "source_file": "E22526.csv",
+      "assigned_season": "2025-26",
+      "matches": 552,
+      "date_min": "2025-08-01",
+      "date_max": "2026-05-02",
+      "july_matches": 0,
+      "sha256": "4c96eff8a2f20c5e26015af8609c4f90478ff055f58ab6e137cc3445bf4c67ee"
+    },
+    {
+      "source_file": "E31920.csv",
+      "assigned_season": "2019-20",
+      "matches": 440,
+      "date_min": "2019-08-03",
+      "date_max": "2020-03-10",
+      "july_matches": 0,
+      "sha256": "4989515126e1d4cc9ae5276e44e36660fe3632f881a8ae39b4328f66e714bec2"
+    },
+    {
+      "source_file": "E32021.csv",
+      "assigned_season": "2020-21",
+      "matches": 552,
+      "date_min": "2020-09-12",
+      "date_max": "2021-05-08",
+      "july_matches": 0,
+      "sha256": "fafff0ee8daf33ca954f94f6856048451ec398688bb6cb357d8aa4d5ded8a3a6"
+    },
+    {
+      "source_file": "E32122.csv",
+      "assigned_season": "2021-22",
+      "matches": 552,
+      "date_min": "2021-08-07",
+      "date_max": "2022-05-07",
+      "july_matches": 0,
+      "sha256": "dff7be2d8803eca6f5d0d0f5d3c5e96272c450407388150961920cbd85920bf0"
+    },
+    {
+      "source_file": "E32223.csv",
+      "assigned_season": "2022-23",
+      "matches": 552,
+      "date_min": "2022-07-30",
+      "date_max": "2023-05-08",
+      "july_matches": 12,
+      "sha256": "96778f4c63843634b4690e34d740eb58bd474a0f08c6be48c1987ce92093fa5a"
+    },
+    {
+      "source_file": "E32324.csv",
+      "assigned_season": "2023-24",
+      "matches": 552,
+      "date_min": "2023-08-05",
+      "date_max": "2024-04-27",
+      "july_matches": 0,
+      "sha256": "10da9da5badeb696d163154b26fa43875bfc9fd96d2ed81c5e4d5958e7d231ef"
+    },
+    {
+      "source_file": "E32425.csv",
+      "assigned_season": "2024-25",
+      "matches": 552,
+      "date_min": "2024-08-09",
+      "date_max": "2025-05-03",
+      "july_matches": 0,
+      "sha256": "fd8e1e2483478b14ce7d0cc0317ab4b8fc0abf6e44e76613d855212f8acd760d"
+    },
+    {
+      "source_file": "E32526.csv",
+      "assigned_season": "2025-26",
+      "matches": 552,
+      "date_min": "2025-08-02",
+      "date_max": "2026-05-02",
+      "july_matches": 0,
+      "sha256": "eff4fa15cb18857091d1f0666d0b8a6c61eda7a8374feef8f2d8a38244e0e45d"
+    }
+  ],
+  "n_source_matches": 13988,
+  "n_evaluated": 12216,
+  "n_original_features": 66,
+  "n_selected_features": 36,
+  "selected_config": "window_10_only",
+  "high_correlation_pairs_ge_095": 12,
+  "elapsed_seconds": 58.32570130001113,
+  "development_protocol_sha256": "1f15c79a0da5d66df695b18cbf90700aca76b3f7af882213629c3798f1cd0c19"
+}

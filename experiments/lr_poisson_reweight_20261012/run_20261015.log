@@ -1,0 +1,19 @@
+DATA {"matches": 13988, "features": 66, "original_effective_features": 67, "season_fixes": 35, "same_day_results_excluded": true, "seasons": {"2019-20": 1772, "2020-21": 2036, "2021-22": 2036, "2022-23": 2036, "2023-24": 2036, "2024-25": 2036, "2025-26": 2036}, "date_min": "2019-08-02 00:00:00", "date_max": "2026-05-24 00:00:00"}
+Fold 2020-21: train=1772, test=2036
+Fold 2021-22: train=3808, test=2036
+Fold 2022-23: train=5844, test=2036
+Fold 2023-24: train=7880, test=2036
+Fold 2024-25: train=9916, test=2036
+Fold 2025-26: train=11952, test=2036
+
+=== Overall H/D/A ===
+   model fold  n_matches  accuracy  macro_f1  draw_f1  hda_log_loss    brier
+poisson  ALL      12216  0.420187  0.297575 0.000000      1.093788 0.221167
+     lr  ALL      12216  0.456287  0.352288 0.042068      1.056095 0.211983
+ fusion  ALL      12216  0.456287  0.352288 0.042068      1.056095 0.211983
+
+=== Overall scoreline ===
+   model fold  n_matches  true_score_nll  modal_exact_score_accuracy  home_goal_mae_expected  away_goal_mae_expected  total_goal_mae_expected  home_goal_within_1_expected  away_goal_within_1_expected  total_goal_within_1_expected  actual_outside_grid
+poisson  ALL      12216        3.005417                    0.118533                1.046577                0.942390                 1.394612                     0.549525                     0.566716                      0.411346                    0
+ fusion  ALL      12216        2.967725                    0.121807                0.999054                0.923878                 1.375395                     0.566961                     0.572037                      0.420842                    0
+Complete. Reports and predictions: C:\Users\-jmmmm\Documents\FYP\experiments\lr_poisson_reweight_20261012\results_20261015

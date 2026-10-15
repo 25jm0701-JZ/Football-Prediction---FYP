@@ -1,0 +1,10 @@
+test_file_season_does_not_depend_on_match_month (__main__.ProtocolTests.test_file_season_does_not_depend_on_match_month) ... ok
+test_fit_rejects_future_dates_before_training (__main__.ProtocolTests.test_fit_rejects_future_dates_before_training) ... ok
+test_fit_rejects_target_season_even_with_earlier_date (__main__.ProtocolTests.test_fit_rejects_target_season_even_with_earlier_date) ... ok
+test_invalid_source_season_fails (__main__.ProtocolTests.test_invalid_source_season_fails) ... ok
+test_selection_accepts_new_count_and_uses_validation_loss (__main__.ProtocolTests.test_selection_accepts_new_count_and_uses_validation_loss) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.107s
+
+OK

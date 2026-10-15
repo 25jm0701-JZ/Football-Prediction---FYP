@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "dda3bbbc34cc093f0b8e915f2164b8e3bbaa9116",
+  "passed": true,
+  "unit_tests": {
+    "protocol": 5,
+    "fusion_math": 12,
+    "temporal_features": 5,
+    "total": 22,
+    "passed": true
+  },
+  "current_result_audit": {
+    "passed": true,
+    "n_matches": 12216,
+    "models": 5,
+    "reconstructed_score_matrices": 36648,
+    "input_files_verified": 28,
+    "selected_features": 36,
+    "max_loaded_model_probability_error": 0.0,
+    "max_training_only_imputer_error": 0.0
+  },
+  "fixed66_audit": {
+    "passed": true,
+    "matches": 12216,
+    "features": 66,
+    "test_seasons": 6,
+    "raw_input_hashes_verified": 28,
+    "original_archive_computation_code_unchanged": null,
+    "model": "fixed66, unscaled LR C=1; adaptive Poisson score grid",
+    "max_marginal_error": 3.3306690738754696e-16,
+    "max_nll_identity_error": 6.217248937900877e-15,
+    "folds": [
+      {
+        "test_season": "2020-21",
+        "train_seasons": "2019-20",
+        "n_train": 1772,
+        "n_test": 2036,
+        "train_last_date": "2020-07-26",
+        "test_first_date": "2020-09-11",
+        "test_last_date": "2021-05-23",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      },
+      {
+        "test_season": "2021-22",
+        "train_seasons": "2019-20,2020-21",
+        "n_train": 3808,
+        "n_test": 2036,
+        "train_last_date": "2021-05-23",
+        "test_first_date": "2021-08-06",
+        "test_last_date": "2022-05-22",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      },
+      {
+        "test_season": "2022-23",
+        "train_seasons": "2019-20,2020-21,2021-22",
+        "n_train": 5844,
+        "n_test": 2036,
+        "train_last_date": "2022-05-22",
+        "test_first_date": "2022-07-29",
+        "test_last_date": "2023-05-28",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      },
+      {
+        "test_season": "2023-24",
+        "train_seasons": "2019-20,2020-21,2021-22,2022-23",
+        "n_train": 7880,
+        "n_test": 2036,
+        "train_last_date": "2023-05-28",
+        "test_first_date": "2023-08-04",
+        "test_last_date": "2024-05-19",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      },
+      {
+        "test_season": "2024-25",
+        "train_seasons": "2019-20,2020-21,2021-22,2022-23,2023-24",
+        "n_train": 9916,
+        "n_test": 2036,
+        "train_last_date": "2024-05-19",
+        "test_first_date": "2024-08-09",
+        "test_last_date": "2025-05-25",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      },
+      {
+        "test_season": "2025-26",
+        "train_seasons": "2019-20,2020-21,2021-22,2022-23,2023-24,2024-25",
+        "n_train": 11952,
+        "n_test": 2036,
+        "train_last_date": "2025-05-25",
+        "test_first_date": "2025-08-01",
+        "test_last_date": "2026-05-24",
+        "features": 66,
+        "model_parameters_frozen_within_season": true
+      }
+    ],
+    "code_hashes": {
+      "experiments\\lr_poisson_reweight_20261012\\run_experiment.py": "437b4ffa606e00e9858f2f79b8b13fded6fc87913a746abc32c5a26250e3e0eb",
+      "experiments\\lr_poisson_reweight_20261012\\fusion_core.py": "3d0f00ebd97f0951c1f39bfb1fd80d3d003425b7f748ddd23a15baefecab5fef",
+      "experiments\\lr_poisson_reweight_20261012\\test_fusion.py": "943f3cdbf7c1d6ab1614df71963a6158423012ecb7807d6e0f4257164feebcad",
+      "experiments\\feature_search_20261010\\run_feature_search.py": "70375715280e87809e71fd73d11fd80337cc54e2fc1bcb23ebda6bf03d548fcc",
+      "scripts\\tracka_poisson_goals.py": "5dda455be835d23f0630a46da5a5b049cfceaee79463e4cebae62b3dcd4561b4",
+      "scripts\\atta_mills_tracka_english4.py": "28faef4ee9e28099cde19ac6bcbf7ed3565802400cc1b3cdc9a2c6ac47e655f9",
+      "league\\src\\data_loader.py": "ed3bfc6e95dee751c434ccdd02a2ea2ec3f43decbfbbc4b2b3e16f88b28f4734",
+      "experiments\\lr_poisson_reweight_20261012\\verify_results.py": "70e04e573fcbe54ed54e3b4677fdd2f7de8df3db8ea3f2cfdd8a6c99b75cc775"
+    }
+  },
+  "checked_current_markdown_files": 9,
+  "checked_local_links": 55,
+  "broken_current_links": [],
+  "excluded_route_mentions_in_current_narrative": [],
+  "retired_tracked_files": 168,
+  "retired_files_by_category": {
+    "out_of_scope_experiment": 157,
+    "obsolete_root_and_builders": 11
+  },
+  "retired_file_hashes_checked_against_base_commit": true,
+  "data_values_and_legacy_algorithm_unchanged": true,
+  "recorded_input_byte_preservation": ".gitattributes disables newline conversion for audited inputs and legacy feature source",
+  "note": "The publication rechecks saved completed results and unit tests; it does not claim a fresh full feature search in this cleanup task."
+}

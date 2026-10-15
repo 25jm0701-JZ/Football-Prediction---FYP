@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "n_matches": 12216,
+  "models": 5,
+  "reconstructed_score_matrices": 36648,
+  "input_files_verified": 28,
+  "max_loaded_model_probability_error": 0.0,
+  "max_training_only_imputer_error": 0.0,
+  "max_reconstructed_nll_error": 1.7763568394002505e-15,
+  "max_matrix_mass_error": 4.440892098500626e-16,
+  "prior66_probability_error": 5.551115123125783e-17,
+  "selected_features": 36
+}

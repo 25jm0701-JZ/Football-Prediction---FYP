@@ -1,0 +1,17 @@
+{
+  "experiment_date": "2026-10-15",
+  "objective": "Reproduce historical feature selection, then compare fixed36 with fixed66 LR and both Poisson fusions on identical six-season fixtures.",
+  "feature_policy": "Fixed exact window_10_only columns in all six outer seasons; never replace by yearly selected features.",
+  "development_ranking_season": "2022-23",
+  "development_validation_seasons": ["2023-24", "2024-25"],
+  "development_primary_metric": "log_loss",
+  "outer_test_seasons": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"],
+  "initial_training_season": "2019-20",
+  "lr": {"C": 1.0, "solver": "lbfgs", "max_iter": 4000, "random_state": 42, "scaling": false, "imputation": "training-only mean; keep_empty_features=True"},
+  "poisson": {"estimator": "LoukasPoissonModel", "smoothing": 0.05, "tail_tolerance": 1e-12, "grid_policy": "adaptive from predicted lambdas; common grid for all three score models"},
+  "fusion": {"alpha": 1.0, "definition": "F(i,j)=LR(class)*P(i,j)/P(class)", "class_order": ["away", "draw", "home"]},
+  "bootstrap": {"repeats": 4000, "seed": 123, "primary": "paired date clusters stratified by test season", "sensitivity": "paired test-season clusters; only six clusters"},
+  "retrospective": true,
+  "limitation": "Fixed36 was selected using later historical seasons. Six-season fixed36 evaluation is retrospective, not six independent feature-selection holdouts. 2025-26 follows the original selection interval but has already been inspected.",
+  "do_not_tune_from_outer_results": true
+}

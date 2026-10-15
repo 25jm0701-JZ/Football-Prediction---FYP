@@ -1,0 +1,11 @@
+{
+  "selected_features": 36,
+  "selected_config": "window_10_only",
+  "lr_additional_correct": 54,
+  "lr_accuracy_delta": 0.004420432220039294,
+  "lr_log_loss_delta": -0.0029621387987679437,
+  "seasons_accuracy_improved": 5,
+  "seasons_log_loss_improved": 6,
+  "leagues_log_loss_improved": 4,
+  "season_league_log_loss_improved": 18
+}

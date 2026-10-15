@@ -5,3 +5,17 @@ outputs/
 world_cup/data/raw/international_results.csv
 node_modules/
 .venv*/
+
+# Local drafting, download, environment and publication intermediates.
+tmp/
+downloaded_files/
+.claude/
+.pytest_cache/
+~$*.docx
+# Local prototypes are outside the published forecasting study.
+agent/
+agent_tools/
+agent_rag/
+agent_eval/
+tests/
+docs/agent_*.md

@@ -1,0 +1,36 @@
+date,division,home_team,away_team,source_file,season_id,home_goals_full,away_goals_full,target_result,old_month_assigned_season
+2022-07-29,E1,Huddersfield,Burnley,E12223.csv,2022-23,0,1,0,2021-22
+2022-07-30,E1,Blackburn,QPR,E12223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E1,Blackpool,Reading,E12223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E1,Cardiff,Norwich,E12223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E1,Hull,Bristol City,E12223.csv,2022-23,2,1,2,2021-22
+2022-07-30,E1,Luton,Birmingham,E12223.csv,2022-23,0,0,1,2021-22
+2022-07-30,E1,Millwall,Stoke,E12223.csv,2022-23,2,0,2,2021-22
+2022-07-30,E1,Rotherham,Swansea,E12223.csv,2022-23,1,1,1,2021-22
+2022-07-30,E1,Wigan,Preston,E12223.csv,2022-23,0,0,1,2021-22
+2022-07-30,E1,Middlesbrough,West Brom,E12223.csv,2022-23,1,1,1,2021-22
+2022-07-31,E1,Sunderland,Coventry,E12223.csv,2022-23,1,1,1,2021-22
+2022-07-30,E2,Accrington,Charlton,E22223.csv,2022-23,2,2,1,2021-22
+2022-07-30,E2,Bristol Rvs,Forest Green,E22223.csv,2022-23,1,2,0,2021-22
+2022-07-30,E2,Cambridge,Milton Keynes Dons,E22223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E2,Cheltenham,Peterboro,E22223.csv,2022-23,2,3,0,2021-22
+2022-07-30,E2,Derby,Oxford,E22223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E2,Ipswich,Bolton,E22223.csv,2022-23,1,1,1,2021-22
+2022-07-30,E2,Lincoln,Exeter,E22223.csv,2022-23,1,1,1,2021-22
+2022-07-30,E2,Morecambe,Shrewsbury,E22223.csv,2022-23,0,0,1,2021-22
+2022-07-30,E2,Plymouth,Barnsley,E22223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E2,Port Vale,Fleetwood Town,E22223.csv,2022-23,2,1,2,2021-22
+2022-07-30,E2,Sheffield Weds,Portsmouth,E22223.csv,2022-23,3,3,1,2021-22
+2022-07-30,E2,Wycombe,Burton,E22223.csv,2022-23,3,0,2,2021-22
+2022-07-30,E3,AFC Wimbledon,Gillingham,E32223.csv,2022-23,2,0,2,2021-22
+2022-07-30,E3,Bradford,Doncaster,E32223.csv,2022-23,0,0,1,2021-22
+2022-07-30,E3,Carlisle,Crawley Town,E32223.csv,2022-23,1,0,2,2021-22
+2022-07-30,E3,Harrogate,Swindon,E32223.csv,2022-23,3,0,2,2021-22
+2022-07-30,E3,Leyton Orient,Grimsby,E32223.csv,2022-23,2,0,2,2021-22
+2022-07-30,E3,Northampton,Colchester,E32223.csv,2022-23,3,2,2,2021-22
+2022-07-30,E3,Rochdale,Crewe,E32223.csv,2022-23,1,2,0,2021-22
+2022-07-30,E3,Salford,Mansfield,E32223.csv,2022-23,2,0,2,2021-22
+2022-07-30,E3,Stockport,Barrow,E32223.csv,2022-23,2,3,0,2021-22
+2022-07-30,E3,Sutton,Newport County,E32223.csv,2022-23,1,1,1,2021-22
+2022-07-30,E3,Tranmere,Stevenage,E32223.csv,2022-23,1,2,0,2021-22
+2022-07-30,E3,Walsall,Hartlepool,E32223.csv,2022-23,4,0,2,2021-22

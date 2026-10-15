@@ -1,8 +1,0 @@
-# Versions used and checked for the 2026-10-10 experiment on Python 3.11.
-# CUDA and xgboost are not required for this feature search.
-numpy==2.4.6
-pandas==3.0.5
-scipy==1.17.1
-scikit-learn==1.9.0
-joblib==1.6.0
-threadpoolctl==3.6.0

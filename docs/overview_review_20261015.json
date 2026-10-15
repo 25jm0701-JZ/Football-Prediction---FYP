@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-15",
+  "passed": true,
+  "scope": "English E0-E3 pre-match outcome and score probabilities",
+  "checked_word_documents": [
+    {
+      "path": "Project_Overview_CN.docx",
+      "sha256": "e83ff951cc2732e976e117e90ddfafb8df1e33cabf1af8b258cb32a98c2f918e",
+      "scope_check_passed": true
+    },
+    {
+      "path": "Project_Overview.docx",
+      "sha256": "37f35d2c108f525154b4e6b4fde25a41dfbcc72868655e32ff6036b7adec73b9",
+      "scope_check_passed": true
+    },
+    {
+      "path": "导师核对简报_20261015.docx",
+      "sha256": "17929cb0d09ace636518d42e29a0a4fd64bed9403872f9e394aa1738f01ff3bc",
+      "scope_check_passed": true
+    }
+  ],
+  "primary_local_sources": [
+    "Buchdahl 2003",
+    "Atta Mills et al. 2024",
+    "Luiz et al. 2024",
+    "Loukas et al. 2024",
+    "Reade et al. 2020"
+  ],
+  "current_literature_pdf_count": 5,
+  "protected_league_files_verified": 238,
+  "word_render_pages": {
+    "Project_Overview_CN": 12,
+    "Project_Overview": 12
+  },
+  "main_metric_consistency_verified": true,
+  "overview_sources_and_generators_synchronized": true
+}

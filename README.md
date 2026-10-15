@@ -9,6 +9,7 @@
 | 内容 | 入口 |
 |---|---|
 | 研究问题、方法与主线解释 | [主线说明](docs/research_mainline_CN.md) |
+| 当前中英文项目总览 | [中文 overview](Project_Overview_CN.docx) · [English overview](Project_Overview.docx) |
 | 过往实验与结论如何演进 | [实验沿革](docs/experiment_history_CN.md) |
 | 最新 66→36 与泊松融合代码、结果、复现 | [主实验](experiments/feature_rebuild_poisson_20261015/README.md) |
 | 完整数值、分组结果与局限 | [中文实验报告](experiments/feature_rebuild_poisson_20261015/results/report_CN.md) |

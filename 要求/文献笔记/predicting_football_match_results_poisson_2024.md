@@ -157,7 +157,4 @@ xG_Liverpool = 1.4
 - 由历史进失球估计 expected goals。
 - 生成比分概率矩阵。
 - 再聚合为赛果概率。
-- 与 Elo/FIFA ranking 或机器学习模型比较。
-
-如果用于世界杯，应注意国家队样本少，可以把 Poisson 模型和 FIFA/Elo rating 结合，而不是只用单届赛事进失球估计参数。
-
+- 与 Elo评分 或机器学习模型比较。

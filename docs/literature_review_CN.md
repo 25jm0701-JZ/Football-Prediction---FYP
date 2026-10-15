@@ -1,6 +1,6 @@
 # 足球比赛预测与逻辑回归引导泊松分布文献综述
 
-中文版论文草稿，核查与检索日期为2026年10月15日。本文以项目保存的8份PDF为主要依据，并补充检索与分类概率引导比分分布相关的研究。文献中的结果属于各自的数据和评价协议，不能直接与本项目的准确率排名。工程借鉴和本项目结果另见[方法借鉴与实验对应说明](literature_method_mapping_CN.md)。
+中文版论文草稿，核查与检索日期为2026年10月15日。本文以项目保存的5份联赛相关PDF为主要依据，并补充检索与分类概率引导比分分布相关的研究。文献中的结果属于各自的数据和评价协议，不能直接与本项目的准确率排名。工程借鉴和本项目结果另见[方法借鉴与实验对应说明](literature_method_mapping_CN.md)。
 
 ## 1 足球比赛能否通过建模预测
 
@@ -16,25 +16,11 @@ Buchdahl（2003）在技术报告《Rating Systems for Fixed Odds Football Match
 
 这种方法计算直接，能够说明历史表现如何进入预测。不过，简单净胜球评分并未充分调整对手强度，固定窗口和经验映射也不保证适用于不同联赛或时期。该文件是技术报告，不宜与同行评审论文混写为同等证据。本研究借鉴的是历史窗口和双方状态表达的思路，而非直接沿用其拟合曲线或投注结论。
 
-### 2.2 Suzuki与Ohmori的排名有效性检验
-
-Suzuki与Ohmori（2008）研究FIFA排名能否解释世界杯球队表现，使用1994、1998和2002年世界杯建立与检验排名相关规则，并将规则用于2006年世界杯。其分析包括Fisher精确检验、卡方检验和Spearman等级相关，重点是排名与球队赛事表现、晋级情况之间的关系。[2]
-
-该研究表明，球队强弱的简洁排序可以成为预测信息，但研究对象是国家队赛事，使用的排名制度也属于较早版本。其结论不能直接推广为英格兰四级联赛的单场比分预测能力，更不能将赛事晋级判断与完整比分分布的质量视为同一指标。
-
-### 2.3 Wunderlich与Memmert的排名和赔率概率比较
-
-Wunderlich与Memmert（2016）分析2006、2010和2014年世界杯的183场比赛，将Betfair赔率与FIFA排名的预测质量进行比较。研究不仅使用名次高低作判断，还把排名积分转换为预期进球分配，并借助双变量泊松方法得到可比较的赛果概率；预测评价使用对数似然等概率标准。[3]
-
-这项工作的价值在于将评分方法与概率模型接通，使排名和市场预测能够在同一输出尺度下比较。其样本仍限于少数世界杯，转换过程也包含对进球总量的设定，因此其中某届赛事排名优于市场的结果不能被解释为排名在所有足球预测任务中更强。
-
-项目另存的FIFA《Revision of the FIFA/Coca-Cola World Ranking》属于官方方法说明，其积分更新形式为原积分加上比赛重要性与实际结果相对预期结果的偏差。[4] 该文件适合解释国家队评级机制，不是验证预测效果的实验论文。本文不为未确认的本地版本补写年份；主线联赛模型也没有使用FIFA国家队积分。
-
 ## 3 机器学习与深度学习方法
 
 ### 3.1 Atta Mills等的多模型与信息工程研究
 
-Atta Mills、Deng、Zhong与Li（2024）研究荷甲，并扩展到苏格兰和比利时联赛，比较逻辑回归、随机森林、XGBoost、支持向量机、朴素贝叶斯、前馈神经网络、循环神经网络及投票组合，结合数据归一化、特征工程和SVM-SMOTE、Near-Miss等采样处理。[5]
+Atta Mills、Deng、Zhong与Li（2024）研究荷甲，并扩展到苏格兰和比利时联赛，比较逻辑回归、随机森林、XGBoost、支持向量机、朴素贝叶斯、前馈神经网络、循环神经网络及投票组合，结合数据归一化、特征工程和SVM-SMOTE、Near-Miss等采样处理。[2]
 
 必须注意其任务定位：作者明确引入半场结果和半场进球服务于赛中决策，输入还包括赔率。论文报告前馈网络在赛果任务中的表现，逻辑回归在大小球任务中的表现，以及投票模型的优势。因此，这篇文献既不能证明LR在所有任务中最好，也不能把其含半场信息的成绩作为本项目无赔率赛前模型的目标。
 
@@ -42,7 +28,7 @@ Atta Mills、Deng、Zhong与Li（2024）研究荷甲，并扩展到苏格兰和�
 
 ### 3.2 Luiz等的神经网络与相对能力特征
 
-Luiz、Fialho与Teixeira（2024）使用来自13个联赛的24,760场比赛构造球队历史与相对能力输入，比较不同历史窗口和数据处理方式，并训练包含100、80、5、3个神经元的四层网络。其特征涉及pi-rating、双方相对攻防与组织能力等，并使用置换重要性检查输入贡献。最终在2,589场测试比赛上报告52.8%的整体准确率；80.3%来自特定高置信度情形，不能当作全体比赛准确率。[6]
+Luiz、Fialho与Teixeira（2024）使用来自13个联赛的24,760场比赛构造球队历史与相对能力输入，比较不同历史窗口和数据处理方式，并训练包含100、80、5、3个神经元的四层网络。其特征涉及pi-rating、双方相对攻防与组织能力等，并使用置换重要性检查输入贡献。最终在2,589场测试比赛上报告52.8%的整体准确率；80.3%来自特定高置信度情形，不能当作全体比赛准确率。[3]
 
 该研究的重要启发是，历史窗口、双方相对表达和特征贡献都应成为实验对象，而不是默认所有原始统计同样有效。不过，WhoScored的部分能力指标在本项目的公开CSV中不存在，原模型与本项目数据、测试区间及网络设置也不同。我们对20场窗口和相对特征的检验属于受启发的局部实验，不是对整篇神经网络系统的等价复现；局部负结果不能推出深度学习无效。
 
@@ -52,7 +38,7 @@ Luiz、Fialho与Teixeira（2024）使用来自13个联赛的24,760场比赛构�
 
 ### 4.1 Loukas等的独立泊松比分模型
 
-Loukas、Karapiperis、Feretzakis与Verykios（2024）以2022/23英超为例，根据球队进攻、防守和主场优势估计双方进球强度，用独立泊松分布形成比分概率，再将比分区域汇总为胜平负概率。[7] 尽管论文题目使用“Poisson Regression”，其公开计算的关键是攻防强度和联赛均值的乘法结构；不能将本项目复现的强度计算笼统描述为另行拟合了一个包含所有特征的泊松广义线性回归。
+Loukas、Karapiperis、Feretzakis与Verykios（2024）以2022/23英超为例，根据球队进攻、防守和主场优势估计双方进球强度，用独立泊松分布形成比分概率，再将比分区域汇总为胜平负概率。[4] 尽管论文题目使用“Poisson Regression”，其公开计算的关键是攻防强度和联赛均值的乘法结构；不能将本项目复现的强度计算笼统描述为另行拟合了一个包含所有特征的泊松广义线性回归。
 
 评价协议也需要分别描述：部分展示使用整季参数分析同季比赛；作者另外使用前19轮拟合，并在随后5轮的50场比赛上进行独立测试。因此，可以指出同季评价的局限和独立测试规模有限，但不能说原文完全没有样本外检验。作者还报告对0比0的低估，这提示独立进球假设和简单参数化可能遗漏低比分结构；原文并未因此实现零膨胀模型。
 
@@ -60,7 +46,7 @@ Loukas、Karapiperis、Feretzakis与Verykios（2024）以2022/23英超为例，�
 
 ### 4.2 Reade等的双变量泊松与市场评价
 
-Reade、Singleton与Vaughan Williams（2020）研究2016/17与2017/18两个英超赛季的760场比赛，使用双变量泊松回归生成比分概率，纳入球队效应、评级和比赛情境等信息，并按比赛日滚动利用过去一年的历史估计模型。[8] 与独立泊松不同，双变量结构允许双方进球存在共同成分。
+Reade、Singleton与Vaughan Williams（2020）研究2016/17与2017/18两个英超赛季的760场比赛，使用双变量泊松回归生成比分概率，纳入球队效应、评级和比赛情境等信息，并按比赛日滚动利用过去一年的历史估计模型。[5] 与独立泊松不同，双变量结构允许双方进球存在共同成分。
 
 作者分别评价赛果、比分、净胜球和总进球的概率与点预测，并讨论先选择赛果再在该赛果内部选择比分的条件众数。研究采用预测包容性等回归分析比较模型与赔率，同时检验简单投注策略。其结果说明，某些概率比较上的优势并不必然转化为稳定收益。
 
@@ -84,21 +70,19 @@ Reade、Singleton与Vaughan Williams（2020）研究2016/17与2017/18两个英�
 
 ### 7.1 已有足球混合模型
 
-Goddard（2005）比较基于进球的双变量泊松与直接预测赛果的有序probit，并研究利用进球相关历史信息预测赛果的混合方式。该工作说明，进球信息与结果模型的结合已有较早研究；其方向并非将LR的三个输出重新分配到泊松比分区域。[9](https://www.sciencedirect.com/science/article/pii/S0169207004000676)
+Goddard（2005）比较基于进球的双变量泊松与直接预测赛果的有序probit，并研究利用进球相关历史信息预测赛果的混合方式。该工作说明，进球信息与结果模型的结合已有较早研究；其方向并非将LR的三个输出重新分配到泊松比分区域。[6](https://www.sciencedirect.com/science/article/pii/S0169207004000676)
 
-Groll、Ley、Schauberger与Van Eetvelde（2018）的世界杯研究比较泊松、随机森林和评级，并将估计球队能力作为随机森林输入。它属于模型组合与信息互补的邻近研究，而不是本项目的分区概率重加权。[10](https://arxiv.org/abs/1806.03208)
-
-Pérez-Blanco与Salmerón的贝叶斯网络论文于2025年在线发表、编入2026年期刊，研究平局和犯规预测，并在未来工作中提出将校准后的平局概率用于Dixon–Coles模型的相关结构。这与分类概率帮助进球模型的方向相近，但属于建议，不能写成作者已经验证了本项目融合或已获得相关改进。[11](https://link.springer.com/article/10.1007/s13748-025-00395-8)
+Pérez-Blanco与Salmerón的贝叶斯网络论文于2025年在线发表、编入2026年期刊，研究平局和犯规预测，并在未来工作中提出将校准后的平局概率用于Dixon–Coles模型的相关结构。这与分类概率帮助进球模型的方向相近，但属于建议，不能写成作者已经验证了本项目融合或已获得相关改进。[7](https://link.springer.com/article/10.1007/s13748-025-00395-8)
 
 ### 7.2 与当前实现很接近的工程先例
 
-本次检索发现公开项目`football_agent_predictor`。其作者README明确描述：混合启发式模型与市场胜平负概率，建立泊松比分分布，并重加权联合比分矩阵，使之匹配混合后的1X2概率。[12](https://github.com/orionmontoyac/football_agent_predictor)
+本次检索发现公开项目`football_agent_predictor`。其作者README明确描述：混合启发式模型与市场胜平负概率，建立泊松比分分布，并重加权联合比分矩阵，使之匹配混合后的1X2概率。[8](https://github.com/orionmontoyac/football_agent_predictor)
 
 该描述与我们的比分区域重加权十分接近，但它使用的概率来源和应用目标不同，也不是同行评审研究。本次读取到README；源代码页面未能成功加载，因此这里不宣称完成了公式级代码核对，也不据此确认谁先提出。它足以说明不能把这一工程思路描述为此前无人采用。
 
 ### 7.3 分区概率更新的理论来源
 
-Grünwald与Halpern关于概率更新的研究讨论Jeffrey conditioning与最小相对熵更新：对一个划分指定新的区域概率，同时保持区域内部条件分布，可得到相应的分区更新。[13](https://arxiv.org/html/cs/0306124) 本研究把比分空间划分为客胜、平局和主胜三个区域后，采用的更新在数学形式上属于这一已有框架。这个对应关系是本文对现有理论与当前实现的分析，不能写成该理论论文研究了足球LR融合。
+Grünwald与Halpern关于概率更新的研究讨论Jeffrey conditioning与最小相对熵更新：对一个划分指定新的区域概率，同时保持区域内部条件分布，可得到相应的分区更新。[9](https://arxiv.org/html/cs/0306124) 本研究把比分空间划分为客胜、平局和主胜三个区域后，采用的更新在数学形式上属于这一已有框架。这个对应关系是本文对现有理论与当前实现的分析，不能写成该理论论文研究了足球LR融合。
 
 设原比分概率为P(i,j)，区域总概率为S(c)，LR预测为q(c)。我们的更新为：
 
@@ -128,32 +112,24 @@ Grünwald与Halpern关于概率更新的研究讨论Jeffrey conditioning与最�
 
 [1] Buchdahl, J. (2003). *Rating Systems for Fixed Odds Football Match Prediction*. Football-Data技术报告。本地：[PDF](../要求/文献/ratings.pdf)。
 
-[2] Suzuki, K., & Ohmori, K. (2008). Effectiveness of FIFA/Coca-Cola World Ranking in Predicting the Results of FIFA World Cup Finals. *Football Science*, 5, 18–25。本地：[PDF](../要求/文献/Effectiveness_of_FIFACoca-Cola_World_Ranking_in_Pr.pdf)。
+[2] Atta Mills, E. F. E., Deng, Z., Zhong, Z., & Li, J. (2024). Data-driven prediction of soccer outcomes using enhanced machine and deep learning techniques. *Journal of Big Data*, 11, 170. DOI: 10.1186/s40537-024-01008-2。本地文件见`要求/文献`，文件名含不可断连字符。
 
-[3] Wunderlich, F., & Memmert, D. (2016，在线发表). Analysis of the predictive qualities of betting odds and FIFA World Ranking: evidence from the 2006, 2010 and 2014 Football World Cups. *Journal of Sports Sciences*. DOI: 10.1080/02640414.2016.1218040。本地：[PDF](../要求/文献/Wunderlich_2016_Analysis-of-the-predictive-qualities-of-betting-odds-and-FIFA-World-Ranking.pdf)。
+[3] Luiz, L. E., Fialho, G., & Teixeira, J. P. (2024). Is Football Unpredictable? Predicting Matches Using Neural Networks. *Forecasting*, 6, 1152–1168. DOI: 10.3390/forecast6040057。本地：[PDF](../要求/文献/Is_Football_Unpredictable_Predicting_Matches_Using.pdf)。
 
-[4] FIFA. *Revision of the FIFA/Coca-Cola World Ranking*. 官方方法说明，本地版本年份待确认。本地：[PDF](../要求/文献/积分计分规则.pdf)。
+[4] Loukas, K., Karapiperis, D., Feretzakis, G., & Verykios, V. S. (2024). Predicting Football Match Results Using a Poisson Regression Model. *Applied Sciences*, 14, 7230. DOI: 10.3390/app14167230。本地：[PDF](../要求/文献/Predicting_Football_Match_Resu.pdf)。
 
-[5] Atta Mills, E. F. E., Deng, Z., Zhong, Z., & Li, J. (2024). Data-driven prediction of soccer outcomes using enhanced machine and deep learning techniques. *Journal of Big Data*, 11, 170. DOI: 10.1186/s40537-024-01008-2。本地文件见`要求/文献`，文件名含不可断连字符。
+[5] Reade, J. J., Singleton, C., & Vaughan Williams, L. (2020). Betting markets for English Premier League results and scorelines: evaluating a forecasting model. *Economic Issues*. 本地：[PDF](../要求/文献/reade_singleton_scorelines.pdf)。
 
-[6] Luiz, L. E., Fialho, G., & Teixeira, J. P. (2024). Is Football Unpredictable? Predicting Matches Using Neural Networks. *Forecasting*, 6, 1152–1168. DOI: 10.3390/forecast6040057。本地：[PDF](../要求/文献/Is_Football_Unpredictable_Predicting_Matches_Using.pdf)。
+[6] Goddard, J. (2005). Regression models for forecasting goals and match results in association football. *International Journal of Forecasting*, 21(2), 331–340. DOI: 10.1016/j.ijforecast.2004.08.002。出版方链接见第7节。
 
-[7] Loukas, K., Karapiperis, D., Feretzakis, G., & Verykios, V. S. (2024). Predicting Football Match Results Using a Poisson Regression Model. *Applied Sciences*, 14, 7230. DOI: 10.3390/app14167230。本地：[PDF](../要求/文献/Predicting_Football_Match_Resu.pdf)。
+[7] Pérez-Blanco, N., & Salmerón, A. (2026；2025年9月1日在线). Predicting draws and number of fouls in football matches using Bayesian network classifiers. *Progress in Artificial Intelligence*, 15, 189–202. DOI: 10.1007/s13748-025-00395-8。
 
-[8] Reade, J. J., Singleton, C., & Vaughan Williams, L. (2020). Betting markets for English Premier League results and scorelines: evaluating a forecasting model. *Economic Issues*. 本地：[PDF](../要求/文献/reade_singleton_scorelines.pdf)。
+[8] orionmontoyac. *football_agent_predictor*. GitHub工程项目README，访问日期2026年10月15日；不作为同行评审效果证据。
 
-[9] Goddard, J. (2005). Regression models for forecasting goals and match results in association football. *International Journal of Forecasting*, 21(2), 331–340. DOI: 10.1016/j.ijforecast.2004.08.002。出版方链接见第7节。
-
-[10] Groll, A., Ley, C., Schauberger, G., & Van Eetvelde, H. (2018). Prediction of the FIFA World Cup 2018 – A random forest approach with an emphasis on estimated team ability parameters. arXiv:1806.03208。此处引用预印本版本。
-
-[11] Pérez-Blanco, N., & Salmerón, A. (2026；2025年9月1日在线). Predicting draws and number of fouls in football matches using Bayesian network classifiers. *Progress in Artificial Intelligence*, 15, 189–202. DOI: 10.1007/s13748-025-00395-8。
-
-[12] orionmontoyac. *football_agent_predictor*. GitHub工程项目README，访问日期2026年10月15日；不作为同行评审效果证据。
-
-[13] Grünwald, P. D., & Halpern, J. Y. (2003). Updating Probabilities. arXiv:cs/0306124，UAI 2002论文扩展版。此处使用可核查预印本，参见第5.1和5.2节。
+[9] Grünwald, P. D., & Halpern, J. Y. (2003). Updating Probabilities. arXiv:cs/0306124，UAI 2002论文扩展版。此处使用可核查预印本，参见第5.1和5.2节。
 
 ## 检索记录与待完善事项
 
-补充检索使用“football logistic regression Poisson hybrid”“classifier probabilities reweight Poisson score matrix”“football outcome probabilities Poisson calibration”“Jeffrey conditioning minimum relative entropy”等关键词，并追查作者预印本、出版方页面和工程原始说明。范围不是系统综述的穷尽数据库检索。Goddard出版方摘要、Groll预印本摘要、Pérez-Blanco与Salmerón正文、概率更新正文和工程README的查阅深度已在相关段落区分。
+补充检索使用“football logistic regression Poisson hybrid”“classifier probabilities reweight Poisson score matrix”“football outcome probabilities Poisson calibration”“Jeffrey conditioning minimum relative entropy”等关键词，并追查作者预印本、出版方页面和工程原始说明。范围不是系统综述的穷尽数据库检索。Goddard出版方摘要、Pérez-Blanco与Salmerón正文、概率更新正文和工程README的查阅深度已在相关段落区分。
 
 正式提交论文前，应按学院要求统一参考文献样式，补齐本地未确认的卷期或版本信息；若要宣称LR优于其他模型或未来泛化，应补充同口径算法比较及真正冻结后的新样本。不能用补写结论替代这些实验。

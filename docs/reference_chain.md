@@ -1,41 +1,19 @@
-# 参考链条文档
+# 联赛主线的方法依据
 
-> 目标：按实际阅读顺序记录文献如何一步一步启发本项目。本文档先只记录已经明确的推导，不提前写后续项目操作。
+## 从历史表现构造赛前输入
 
-## 1. Suzuki & Ohmori：赛前 Ranking 作为起点
+Buchdahl 的 Rating Systems for Fixed Odds Football Match Prediction 用球队近期净胜球表达状态，再将主客差异映射为比赛概率。本项目借鉴历史窗口和双方状态表达，保留开赛前已知的信息。
 
-本项目最初受到 Suzuki & Ohmori 关于 FIFA/Coca-Cola World Ranking 预测世界杯成绩的研究启发。该研究使用世界杯开赛前的 FIFA 排名作为球队实力代理，检验排名是否能够解释或预测世界杯决赛圈成绩。
+## 检验特征贡献并选择简化模型
 
-这个思路的优点是简单、直观，而且数据时间点清楚：FIFA ranking 在比赛前已经存在，因此适合作为赛前预测变量。
+Atta Mills 等的多模型研究提示需要区分赛前与赛中输入。Luiz 等关于历史窗口、相对能力和置换重要性的研究，启发了本项目的重要性分析、候选组合验证与受控重训练。通过筛选，从66个特征中选出固定36个特征，再比较跨赛季和跨联赛表现。
 
-但它也有两个限制：
+## 从赛果概率连接到比分分布
 
-- FIFA ranking 主要适用于国家队，尤其是世界杯语境。
-- 单一 ranking 指标不够精细，难以表达联赛球队的近期状态、主客场差异和具体比赛上下文。
+Loukas 等的攻防强度模型提供独立泊松比分基线；Reade 等强调按时间滚动评价，并区分赛果、比分和市场预测。本项目保留泊松比分结构，用LR的客胜、平局、主胜概率调整三个比分区域，分别报告概率评分和点预测指标。
 
-因此，下一步需要寻找一个更适合联赛比赛的 rating 或历史表现建模方法。
+## 当前证据与文献入口
 
-## 2. Buchdahl：从 Ranking 转向联赛 Rating System
+这些方法支持“历史特征→LR赛果概率→泊松比分整合”的研究设计。当前结果仍属于回顾性对照，概率评分改善不等于盈利或所有比分指标都提高。
 
-在这个基础上，本项目进一步阅读 Buchdahl 的 `Rating Systems for Fixed Odds Football Match Prediction`。这篇文章提供了一个更适合联赛场景的思路：不用固定的国家队 ranking，而是根据球队过去比赛表现构造 rating，再用主客队 rating 差来预测即将发生的比赛。
-
-Buchdahl 的方法依然保持了 Suzuki & Ohmori 那种“赛前实力指标 -> 比赛结果预测”的清晰结构，但它把实力指标从 FIFA ranking 换成了联赛球队的近期表现。
-
-## 3. ROI 思路的来源
-
-Buchdahl 这篇文章还有一个重要启发：它不只讨论预测准确性，也把模型概率进一步用于投注回测。文章先根据 rating 推出 fair odds，再把 fair odds 和 bookmaker odds 比较。如果 bookmaker odds 高于模型给出的 fair odds，就认为可能存在 value bet。
-
-因此，ROI 或 yield 分析可以作为赛果预测之外的一个拓展评估方向。它关注的不是“单场是否猜中”，而是模型概率和市场赔率之间是否存在可利用的定价差异。
-
-## 4. Buchdahl `ratings.pdf` 方法论摘要
-
-Buchdahl 的方法可以概括为六步：
-
-1. **定义球队 rating**：rating 是一支球队相对对手的量化优势，来自过去比赛表现。
-2. **选择近期表现窗口**：示例系统使用最近 6 场比赛。
-3. **计算 goal superiority**：每队最近 6 场进球数减失球数，得到球队近期净胜球 rating。
-4. **计算 match rating**：用主队 rating 减客队 rating，得到单场比赛的相对实力差。
-5. **映射为概率和 fair odds**：在历史样本中统计不同 match rating 对应的主胜、平局、客胜比例，并用拟合曲线平滑成概率；fair odds 等于 `100 / result probability`。
-6. **做 value betting 回测**：当 bookmaker odds 高于模型 fair odds 时下注 1 单位，随后按赛季统计 profit/yield，并与盲押主胜比较。
-
-这篇文章最重要的价值不是模型复杂度，而是完整展示了一个可复现的预测-定价-投注链条：历史表现形成 rating，rating 形成概率，概率形成 fair odds，fair odds 再与市场赔率比较得到 value bet。
+完整文献论述见[文献综述](literature_review_CN.md)，具体方法对应见[方法说明](literature_method_mapping_CN.md)，数值证据见[主实验报告](../experiments/feature_rebuild_poisson_20261015/results/report_CN.md)。

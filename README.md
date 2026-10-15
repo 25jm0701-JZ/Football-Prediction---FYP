@@ -76,7 +76,6 @@ python -B experiments/feature_rebuild_poisson_20261015/test_protocol.py
 | `league/data/english_raw/` | 主实验 28 份输入，保留原始字节供哈希核验 |
 | `scripts/`、`league/src/` | 赛前历史特征、泊松基线和历史实验代码 |
 | `docs/` | 主线、实验沿革、文献、泄漏审查与清理记录 |
-| `world_cup/` | 独立的世界杯支线 |
 | `要求/` | 项目要求、原始文献与阅读笔记 |
 
 历史 FootyStats、神经网络和投注代码保留供追溯，其结论和信息集见[实验沿革](docs/experiment_history_CN.md)。历史 README 只用于考据，最新数字以主实验报告为准。

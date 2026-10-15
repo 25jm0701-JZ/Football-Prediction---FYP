@@ -31,7 +31,7 @@ home_yellow, away_yellow, home_red, away_red
 `deep_learning_experiment.py`、`value_betting_walkforward.py`、`over_under_experiment.py`、`tree_comparison.py`。
 
 **不受影响**（特征只取滚动均值/前缀过滤，本就无泄漏）：
-`fair_comparison.py`（滚动均值+FootyStats 25 特征）、`footystats_backtest.py`（滚动+阵容+赛前）、World Cup 子项目（独立管线）。
+`fair_comparison.py`（滚动均值+FootyStats 25 特征）、`footystats_backtest.py`（滚动+阵容+赛前）。
 
 ---
 

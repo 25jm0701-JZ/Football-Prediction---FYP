@@ -4,6 +4,5 @@
 
 | 历史版本 | 原文 |
 |---|---|
-| fcc803c 项目总览 | [原文](README_project_overview_fcc803c.md) |
 | 020c9d8 English4 | [原文](README_tracka_english4_020c9d8.md) |
 | b315b38 泊松基线 | [原文](README_poisson_b315b38.md) |

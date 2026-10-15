@@ -1,0 +1,1181 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "c4376a35e1b509565d62dd1825a89e856e7fd4c8",
+  "passed": true,
+  "archive": {
+    "path": "docs/archive/world_cup_exploration_20261015.zip",
+    "bytes": 7892289,
+    "sha256": "b920ef3919187315c21acb3e2a4f1db37019cd362cefbbc497f2835ee9e8dc92",
+    "verified_entries": 235,
+    "all_entry_hashes_verified": true,
+    "local_recovery_archive": true
+  },
+  "earlier_obsolete_archive_unchanged": true,
+  "removed_local_files": 126,
+  "removed_github_files": 63,
+  "removed_local_categories": {
+    "旧项目总览与专用重建脚本": 2,
+    "旧稿、旧预览和过期校验记录": 29,
+    "预测输出与保存模型": 33,
+    "代码、数据与测试": 55,
+    "旧文献综述Word": 1,
+    "专用文献PDF": 3,
+    "专用阅读笔记": 3
+  },
+  "replaced_audit_records": [
+    "docs/thesis_sync_20261015/content_verification.json"
+  ],
+  "removed_files": [
+    {
+      "scope": "workspace",
+      "path": "docs/readme_archive/README_project_overview_fcc803c.md",
+      "bytes": 6444,
+      "sha256": "3953fe28d2d69492db3cd9defc20bed72a8853b04661c2223e0abedb71211838"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/notes_additions.md",
+      "bytes": 9454,
+      "sha256": "aaaa48523f76a733426a5a6b0aaf39ccd070ba926c161c960d198febe842fd59"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/overview_CN_source.md",
+      "bytes": 9826,
+      "sha256": "b725b6245085266536131c1cddc3b4cd6fa2cffbbad6012e4fefdf25a50cb769"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/overview_EN_source.md",
+      "bytes": 11877,
+      "sha256": "1366500066b718eef3df342365deff90b2b54cc0092bbcf25a5125641fea3b39"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/Project_Overview.docx",
+      "bytes": 47442,
+      "sha256": "f9cee62c8dcb4c17dfa6c11d40a096e491cf3622651e35ca4cf83ef6193c0ba2"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/Project_Overview_CN.docx",
+      "bytes": 47872,
+      "sha256": "ef017d657f729a3d9219a69edd19e9ae8502c240ebe947b51e675d4ab925097f"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/Project_Overview_CN_before_replacement.docx",
+      "bytes": 47872,
+      "sha256": "ef017d657f729a3d9219a69edd19e9ae8502c240ebe947b51e675d4ab925097f"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/README.md",
+      "bytes": 10233,
+      "sha256": "65e9f68fc82c12f342669a172c55d382f79507be7d6a95119f5ef030c6ea7cca"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/README_source.md",
+      "bytes": 9574,
+      "sha256": "9be170e483f09b87670c29d58430657583cb32739dd05e0d78485b68d01a7c64"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/sync_thesis_documents.py",
+      "bytes": 13242,
+      "sha256": "bdf46b10daf88862024d3ac4876b09776b365e2595064f609dc24ed0be669f93"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/verify_thesis_sync.py",
+      "bytes": 2786,
+      "sha256": "130d2ac50cf7875fe48aad6ebd554a6f7116cbac791183e68d5da40edb2e753e"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_narrative_revision/论文点.md",
+      "bytes": 42126,
+      "sha256": "01f917b51373fb1be2dcbd362611ec32a2657ab1d4c2b1f6db6ec6d716b83cf1"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/build_overview_cn.py",
+      "bytes": 8287,
+      "sha256": "6f12a8000fa1562d85c1f507d4e7814b0909fdf5dcecd71dfa1c6b14cacae976"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/build_overview_docx.py",
+      "bytes": 8957,
+      "sha256": "90c2be1aa3a5d85acd762a8e732eaa2a78c481329f6ff1e52dbadd345789bc31"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/Project_Overview.docx",
+      "bytes": 40283,
+      "sha256": "7359aa4f3fe93be643d27681b3b4dd548160f3407b17d4a975525c14cb95ff4e"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/Project_Overview_CN.docx",
+      "bytes": 54256,
+      "sha256": "1fee044313ac5226b857152120e23bc902aee1faf59c0d1acaffc8f9941ae7bb"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/README.md",
+      "bytes": 25404,
+      "sha256": "24586a1bdc5a26b8ee87458475fc40395bedf7171fc9fa952fafd38a7c9099ed"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update/论文点.md",
+      "bytes": 11926,
+      "sha256": "6c70287269b42167b2e908ee2af8ac8d054ef2b40aa1d3fd9c73e3dd12e95b81"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/before_update_hashes.json",
+      "bytes": 1229,
+      "sha256": "9305cc3dd673c8492a5e5efc25bb60528ef8b595d7df1021a7be8ffb88a14f52"
+    },
+    {
+      "scope": "workspace",
+      "path": "docs/thesis_sync_20261015/visual_verification.json",
+      "bytes": 879,
+      "sha256": "94bc7867a6a9a3ee809c50c4b8e4fd864b57ec84c4367afda56e79c1bd6ca6d2"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/all_predictions.csv",
+      "bytes": 16732,
+      "sha256": "65bd0f6cfcc9e16e59df5dbec94a9b9e858e970f199c2ec5c828e94563ff207d"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/backtest_master.csv",
+      "bytes": 14073,
+      "sha256": "a5d7cdd6064e0e6c9e8b137f723d56076717ff614cff24d7d4a48bee86af124b"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/cross_validation_predictions.csv",
+      "bytes": 320097,
+      "sha256": "787c5fa4154b297431fd97311e6e26e736414734d8da021f18b283c79f2d7e51"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/aligned_model_predictions.csv",
+      "bytes": 48502,
+      "sha256": "15291b601e493f9ce2930b6c23b666e971982ba3a1a8a221f54dcf8c1d3b1996"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/global_descriptive_weights.json",
+      "bytes": 342,
+      "sha256": "4b04662c89bb5463427c818f7c177279f3ee2baabd8aefc4820bf253060e9294"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/model_comparison_metrics.csv",
+      "bytes": 1196,
+      "sha256": "7ca60df1c40aa314083f2a6586491d4b9c8b75ef923c2529ad43d5f82f001bbc"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/model_selection_recommendation.json",
+      "bytes": 506,
+      "sha256": "ade6a1954d5cf7f0dd960ec8eec7bfbacb7781b47f808fe4fffdfc79b7f6fb1d"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/nested_blend_predictions.csv",
+      "bytes": 62328,
+      "sha256": "4c87320454d2043348061368eaf2d4cb08df887989dbb56789abb12a97c59d4f"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/nested_blend_weights.csv",
+      "bytes": 381,
+      "sha256": "01533c3d1823160b8f9da1a9010058055d571a52a27d0c2fda263b93ba92b9fb"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_data_audits.json",
+      "bytes": 1584,
+      "sha256": "9bfb4869039bbcd1dce41510d386f5ac13f96cc86e9465e6deac36fc7596d09a"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_metrics.csv",
+      "bytes": 480,
+      "sha256": "349d9dbc5b08d056dce843b8e32ea89d543e8cd1cbf773986d4b59e8a16160c3"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_model_2014.json",
+      "bytes": 14244,
+      "sha256": "03bb97e1c5df04b009762d6cf93ddef2c9e4cff2a317a820b88c823abf93beef"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_model_2018.json",
+      "bytes": 14812,
+      "sha256": "dda61878ab02356c5131fc2a11854c074b3f894b82644325478002c54af3466c"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_model_2022.json",
+      "bytes": 14796,
+      "sha256": "2fba81096c16f3949ccd1ac08805fdf410ff04239959e098ef87e29cef33eb05"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_predictions_2014.csv",
+      "bytes": 15092,
+      "sha256": "9d3e4518054bf8b3b153a3a562c2cfb55112fa1078f01278f762f7662580950a"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_predictions_2018.csv",
+      "bytes": 15027,
+      "sha256": "4614f6450ad439cb11b187dafc39b8c62f79c806784099243765d16ae7eca682"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_predictions_2022.csv",
+      "bytes": 15068,
+      "sha256": "755b27c94d30043a1effcb86e5af7e7cfae858eafb8b7ff0d732083104fcb25e"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_predictions_all.csv",
+      "bytes": 44783,
+      "sha256": "65d9c77ff07efbbf0ecd8bc73e97b445ab2203801fc4d0bd8d081377a450ed05"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_training_2014.csv",
+      "bytes": 653349,
+      "sha256": "9937572ad6ac92b99b69e3d67e57c8ad09ad3954c61a4236d668c0132a72e594"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_training_2018.csv",
+      "bytes": 621965,
+      "sha256": "0bbcc96d0107f213cedcc9c905497bc9351067cf109bd991d3a386ec01b2d241"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_backtest/poisson_training_2022.csv",
+      "bytes": 715524,
+      "sha256": "25f3fdbf97cec6c93bdce138d9e7af4d00cee5ba97f9e2e00e1cfd421a41cd84"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/historical_matches_processed.csv",
+      "bytes": 210516,
+      "sha256": "6e88a486462e50903067b0e3c61819cb85b0148ed35e54510d5e576549782645"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/model_comparison_results.csv",
+      "bytes": 663,
+      "sha256": "9b7377d1d1c6021b8ffdf68a38076b135026d671ec634b7ef8abf804b57dc2fa"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/model_metrics.csv",
+      "bytes": 1547,
+      "sha256": "4ac8f3cfec79058bbe6180c69dde4d0bc49f0c108a148c1aa40a50fa908cf14e"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/platform_predictions_2026.csv",
+      "bytes": 16619,
+      "sha256": "1aa85d42d31c1153a31ae34ba33a732394719005afee8848cad3de84f5a4f2e7"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/poisson_model.json",
+      "bytes": 14596,
+      "sha256": "da0fdece1bc0f7896086ee4e292fab2b2bcaac36d0463e368512bb0d1e97a0e3"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/poisson_training_audit.json",
+      "bytes": 959,
+      "sha256": "799261e72d784af6bd53add64b193a67ccc6ff6893c5b51eb6048dce475f8d35"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/poisson_training_matches.csv",
+      "bytes": 569890,
+      "sha256": "59ebb47dc03aafca3b80e5010b56cb183c24061e5acef99431db3277e273374e"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/poisson_training_metrics.json",
+      "bytes": 288,
+      "sha256": "f5106552f348988a0da82b9effdb4686ade5e68480c793b47aa7955d1e94d9f1"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/predictions_2026.csv",
+      "bytes": 8576,
+      "sha256": "8f6e55a6225058f01fd2ac8882e4609c9498d3de998f9dbf50b5260d31e823e8"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/predictions_2026_backtest.csv",
+      "bytes": 11148,
+      "sha256": "25ab19e0507d78710d7667f95facedad25ff04ad438407ac2aa78c7706b49e82"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/ratings_2026_live.csv",
+      "bytes": 1191,
+      "sha256": "24d012b339016a58c1e81423318e45b2d527e1e56b88d86948730a43a6711493"
+    },
+    {
+      "scope": "workspace",
+      "path": "outputs/world_cup/world_cup_model.json",
+      "bytes": 5316,
+      "sha256": "0cc514d9b8206830880fe59606e01318a047eb303db8e95dd82664164359ce96"
+    },
+    {
+      "scope": "workspace",
+      "path": "scripts/rebuild_outputs.py",
+      "bytes": 8644,
+      "sha256": "f245463cc01ce156cec54c3f71353405134b4a0755ff298583274386ddd0dd6b"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/before_github_mainline_sync_20261015/docs/literature_method_mapping_CN.md",
+      "bytes": 8158,
+      "sha256": "3a1e231d5f043d1b057f188a3e52edf2d343ae373438884f87cdfede6bd0787f"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/before_github_mainline_sync_20261015/docs/literature_review_CN.md",
+      "bytes": 20949,
+      "sha256": "6e41c83c0dd15e2d7f3c98b00e7dfb7132c55c1d240559497989dc2d560be359"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/before_github_mainline_sync_20261015/README.md",
+      "bytes": 12702,
+      "sha256": "d161f586a68c30e7955df2b7bababd9b00b5ec56b9deeff61de7a1564474b89e"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/before_github_mainline_sync_20261015/项目知识库.md",
+      "bytes": 15299,
+      "sha256": "6e3f496f311857805824b576773ef3f0390a6f2d40f8266e58e8f807604538bc"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview.pdf",
+      "bytes": 344981,
+      "sha256": "aae22f6fa804d5c9ccad485c6e602b7cc6ffa20e9b4d38dc5ba7f8813eea27a9"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview_CN.pdf",
+      "bytes": 665174,
+      "sha256": "6852580b3db3a7d90c8865a5a7dd55ccbbde5a9ff668606d1df34c7e51858d12"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview_CN_contact.png",
+      "bytes": 752651,
+      "sha256": "5dbc2c7f078ec9977e35ed2aacfa3fe41269ea625534f908852389dad30d2339"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview_contact.png",
+      "bytes": 849669,
+      "sha256": "344e0ce6da08f65619715cc55675ffa34f9977483a735e1bf4fe82dc2f4e6d12"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview_page_1.png",
+      "bytes": 146936,
+      "sha256": "6f6ad1aaed2eded37adb8a786e856b143c6f5b63d9cc40c01b7f46cf0cffaf91"
+    },
+    {
+      "scope": "workspace",
+      "path": "tmp/selection_wording_qa_20261015/Project_Overview_page_6.png",
+      "bytes": 139592,
+      "sha256": "f3448ea57512379006530417375729e0cc6830f0e63760e31a1e0f43ab7f20df"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/fixtures_2026_all.csv",
+      "bytes": 9518,
+      "sha256": "27ee4de73f2c85b6cf7f7d6d46d270d691841fb1180da8df011fc553fe4dda0f"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/fixtures_2026_example.csv",
+      "bytes": 7782,
+      "sha256": "3d034848ac25c188aa6d1ffcf1e360872d28a667ddbfc180cca20d75da765eb4"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/fixtures_2026_knockout_all.csv",
+      "bytes": 1046,
+      "sha256": "5fad90ace86b6086c987a743ef404580c6f24cd54bcfef3adf9ce4a23824ad31"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/fixtures_2026_predict.csv",
+      "bytes": 416,
+      "sha256": "08119a1ae40eae2e4119dc183c560208c02baeb45a61b75386472aaf2415f91f"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/fixtures_2026_round32.csv",
+      "bytes": 896,
+      "sha256": "93780366af940180b1d2bd5c75de624b65af5b022d9ef2d4db56f1c3d2071f4c"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/fifa_men_live_2026.csv",
+      "bytes": 2140,
+      "sha256": "04bcb1aac5c5e10f68b7f7eed053cd5323a20988da66a5a9110e1c0eca0ec1d5"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/fifa_men_live_2026_metadata.json",
+      "bytes": 328,
+      "sha256": "082bd0caaa8d348974c9def2f94f5872488daf6386224660f3dfcd1bc94780af"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2014-brazil-matches-2014-to-2014-stats.csv",
+      "bytes": 20862,
+      "sha256": "6500238259c833619d4e8935f51a65147610f24bd7202ad4c7388669e508ad91"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2018-russia-matches-2018-to-2018-stats.csv",
+      "bytes": 20485,
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2022-qatar-matches-2022-to-2022-stats.csv",
+      "bytes": 21752,
+      "sha256": "00f5d3ce2f48df6ec9803e8ea977bc595a749fc9f1bba8b0c65e0555397f8ca5"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-africa-matches-2026-to-2026-stats.csv",
+      "bytes": 79080,
+      "sha256": "97a5b54fc88e1e4735806c9f8eabd0a068055dba2839f5d00a64100416121518"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-asia-matches-2026-to-2026-stats.csv",
+      "bytes": 65991,
+      "sha256": "33119e4ff41bc3f56490cc2ff91d521168485e22894b8638bcb3ffeb72b1400d"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-concacaf-matches-2026-to-2026-stats.csv",
+      "bytes": 30366,
+      "sha256": "d902fd49ac65bd85676784690a2eb8601e23c27e7ef14e7003e1065e61f18003"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-europe-matches-2026-to-2026-stats.csv",
+      "bytes": 60268,
+      "sha256": "9dea86dc19b9117d6444ccc2040ad2f830cd06ca2405395eb92b3715382a2892"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-oceania-matches-2026-to-2026-stats.csv",
+      "bytes": 6535,
+      "sha256": "d24e288e9ac4cdb03409eb4e9c5915ce7a3be1bf7f71f58c57e361bd370bdf3e"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-wc-qualification-south-america-matches-2023-to-2026-stats.csv",
+      "bytes": 28162,
+      "sha256": "e426fae7cfcb5da8fcfdef68a0ef84cd045db276d34eb287dfc6837aa9cf0c5b"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international-world-cup-matches-2026-to-2026-stats.csv",
+      "bytes": 26775,
+      "sha256": "aa5385805606a2bf074ddc6a27fa88c2b4eb3629ace52ded2ad1531f06d30106"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/international_results.csv",
+      "bytes": 3724396,
+      "sha256": "4e7ca92ce61f305177a5bde45fe35383e8ef3b411d0b10e71cc5f1d468fa7539"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/data/raw/WorldCup2026.xlsx",
+      "bytes": 143990,
+      "sha256": "777652ce1a400aabbbb5778f306311f36197b7e382ff87d5077b5a017473ae72"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/backtest_poisson_blend.py",
+      "bytes": 6330,
+      "sha256": "e909ba59995ad49053b6a5998e5c660924258d91fbde6f0af0d22ad03bbb42a2"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/compare_improvements.py",
+      "bytes": 18243,
+      "sha256": "1a23bd9f9272eb8a3243f90cd9c9a4c74c4e69a785d59ec57a18e55c268a5c2c"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/compare_models_round32.py",
+      "bytes": 7020,
+      "sha256": "e8387b7c4858dd5d38153af850a5c6fa6ebf188592459cdb0d815d91563234a7"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/export_platform_predictions_xlsx.mjs",
+      "bytes": 3169,
+      "sha256": "4f82733006f140114831af31b8c3f750c38c1c6893a10a87f721ae2ed3430cfb"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/export_poisson_predictions_xlsx.mjs",
+      "bytes": 2793,
+      "sha256": "1c23a32356c613964813a1f75b1dae0e315a2b63c95a30e8c122542449315f66"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/predict_2026.py",
+      "bytes": 2579,
+      "sha256": "faec89407d67bd885289477ff21cafccf9b5c261d213cf6ee62a10434597eb67"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/predict_platform_2026.py",
+      "bytes": 5739,
+      "sha256": "a132d9cd399bf21adb5197af4d48a4e55bb58827b5adbc7533e26f172f665667"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/predict_poisson_2026.py",
+      "bytes": 3177,
+      "sha256": "dc11385707b9846288cc06656401c80923a33f3feb9381be2605e32313689c01"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/predict_with_qualifier_xg.py",
+      "bytes": 11744,
+      "sha256": "cd2e2334df7049ee6c74e33634b0b624a5c3fdd067135f3811c8db18d09153ca"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/prepare_poisson_training_data.py",
+      "bytes": 3397,
+      "sha256": "866ed9aa22862b914132760333b0b446ebb3ba14db0d9d6ecc8b5a18cbe1a9b1"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/refresh_2026_fixtures.py",
+      "bytes": 3129,
+      "sha256": "296651a7c6416781d154054d379e4d70a941e34b9df73a8ae56f01e4a8b1bddf"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/refresh_all_fixtures_2026.py",
+      "bytes": 5516,
+      "sha256": "69832e402d329c37ac1ddd4cef5aa19c1bbd96ece601aadc79e4dfe0cb1f95ed"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/refresh_fifa_live_rankings.py",
+      "bytes": 3133,
+      "sha256": "c5923202e8bbc390748701f2654443fb1f42ef7205da213ef7add34437209954"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/run_pipeline.py",
+      "bytes": 4884,
+      "sha256": "02c0067ec2f6ee2fcb12bd0d626b5c5d31e100b6abaaf29ac0c742415ce575d3"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/test_qualifier_features.py",
+      "bytes": 4564,
+      "sha256": "498e810ba224512a89ac03d2fb0d081d324e3ff46fe4a096651d71b096433920"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/train_poisson_model.py",
+      "bytes": 2346,
+      "sha256": "95c0a90b02adae4b4d84befb5022ce94edaf614f99a56341bc4538bb46428942"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/scripts/update_fifa_ratings.py",
+      "bytes": 2141,
+      "sha256": "fb17ebf183c9d47d901946879a4da27206a613bce44474ef88e12594368903a2"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/__init__.py",
+      "bytes": 31,
+      "sha256": "ce5970c7c3a943934f3eb47cc0bc6869cb0b1905387e8c1357bd0293d8082fdd"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/blend_backtest.py",
+      "bytes": 6312,
+      "sha256": "ba8a52f5cdfb087026a65e6ab3d988a99dd2bb3027dc1dd99ebe52c024c45057"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/historical_poisson.py",
+      "bytes": 6381,
+      "sha256": "cfe30a89f8a24c48bd2f3ce09089d3064f92858c0164762fcdfc481179e53c1f"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/international_training_data.py",
+      "bytes": 16711,
+      "sha256": "391b591b9be071f1551eb3cfa8a34acde639d32197948e3ec88465fca4cbe3be"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/ml_ensemble.py",
+      "bytes": 6174,
+      "sha256": "5898c7f61e4df8359a2e7cfbf241228b1cc496b65d340debc5ad4830d646a6ee"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/platform_prediction.py",
+      "bytes": 3208,
+      "sha256": "e7310eb028e2e36624331e979d34195198b8abe3c886ece1c2b744683bd55f7d"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/player_features.py",
+      "bytes": 10776,
+      "sha256": "cfc4e8087a2f68756f169852e04186f9d36a32cff0a5678e12c9788125d6606f"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/player_poisson.py",
+      "bytes": 14609,
+      "sha256": "708d5c773bc55ab01adc0d189b2bf4b09356a8b1772863a42447f82551e27863"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/poisson_model.py",
+      "bytes": 13245,
+      "sha256": "07d9b90bcccc56317c4970534fc6e3b3c15e0fdf364f5303640eac0af48677b7"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/team_names.py",
+      "bytes": 643,
+      "sha256": "c67146d7c4f1f5d2e558d3bf6a1850bbf7d43776a35f65912c7236acb5c5b503"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/src/world_cup_model.py",
+      "bytes": 34180,
+      "sha256": "886f141063749de02d854dfc7facfc8cfbf80813eb5299304411140d682c2e7d"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/test_historical_backtest.py",
+      "bytes": 1572,
+      "sha256": "b96ea49d2703b1fab1f304af0ebae45ba7a169d6158c55342e9a6bb92766a036"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/test_international_training_data.py",
+      "bytes": 5247,
+      "sha256": "6284d572b5069bc2b9370fb4d3360f3c1f8cbab12043b0fcdbb6d98acb7fa19d"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/test_platform_prediction.py",
+      "bytes": 757,
+      "sha256": "062f8c16dbf3aba743a65b30fe4d1a8fb36f8cbc90f644523ce11256d5062e17"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/test_poisson_model.py",
+      "bytes": 2120,
+      "sha256": "3b194877e5c63f412fa825d0f103964754921d5dbdbf0f5c1149ed6b1d72b9da"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/tests/test_world_cup_model.py",
+      "bytes": 1884,
+      "sha256": "f3de1f357b1e1d341d228c5885d28214b28788a4f42ee0d78388e2492e695abc"
+    },
+    {
+      "scope": "workspace",
+      "path": "world_cup/world_cup_rankings_4_sheets_simple.xlsx",
+      "bytes": 8174,
+      "sha256": "8d6ffb0b73fb3928d9417400a9396d02cdd09004c737abae27e6e7a6b606f3cc"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/[Group26] FYP I Literature Review.docx",
+      "bytes": 27894,
+      "sha256": "a1c6771c1c13bb0ecb23b79c306a369dc22eba61090f3e87ff12cae9822a7a0a"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献/Effectiveness_of_FIFACoca-Cola_World_Ranking_in_Pr.pdf",
+      "bytes": 338735,
+      "sha256": "81216ec5da746c7b3faffcdf4303cd0a98031ec17c45cb629cc2bb1ad0ce0c5b"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献/Wunderlich_2016_Analysis-of-the-predictive-qualities-of-betting-odds-and-FIFA-World-Ranking.pdf",
+      "bytes": 932401,
+      "sha256": "ecaec417baf9b3fa9e9c7ba991a2eb7bc4d04bcd719c8c01d14bf1deba59e8d7"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献/积分计分规则.pdf",
+      "bytes": 540462,
+      "sha256": "86b03613878996ebb9b250f5a322b1538d557644144511a87e1270c09466b8ae"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献笔记/effectiveness_fifa_ranking_world_cup世界杯.md",
+      "bytes": 4111,
+      "sha256": "cd6d91e6ac24264ea8905b08947e524d82726e31c72b8d460535111d975634b1"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献笔记/fifa_coca_cola_ranking_rules世界杯.md",
+      "bytes": 3312,
+      "sha256": "c43230ae2d74f52895a7f28c259142587e3e85b30748f35f178166c641922546"
+    },
+    {
+      "scope": "workspace",
+      "path": "要求/文献笔记/wunderlich_2016_betting_odds_fifa_ranking.md",
+      "bytes": 5391,
+      "sha256": "0851474bbf544a117832e3600ea77c22b4df8ae302aa70e5c481a2014539019f"
+    },
+    {
+      "scope": "github_main",
+      "path": "docs/readme_archive/README_project_overview_fcc803c.md",
+      "bytes": 6256,
+      "sha256": "ba0290c194db824f1b429b8e649eb7ce90915a07e181e472e7a768881d8d9a10"
+    },
+    {
+      "scope": "github_main",
+      "path": "scripts/rebuild_outputs.py",
+      "bytes": 8644,
+      "sha256": "f245463cc01ce156cec54c3f71353405134b4a0755ff298583274386ddd0dd6b"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/fixtures_2026_all.csv",
+      "bytes": 9413,
+      "sha256": "88818c8e12300a670ed1df9eed265d626306b9820f49e7ef62d18e161bfc75de"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/fixtures_2026_example.csv",
+      "bytes": 7709,
+      "sha256": "e30c948c590c22097afd5ccac2b5fbf0b38a8eb636172408c6f0af40d98abbe0"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/fixtures_2026_knockout_all.csv",
+      "bytes": 1026,
+      "sha256": "e010a31e4e980d62140c4f04c117acf6da5365672b87aa32a838fff9934a3c7c"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/fixtures_2026_predict.csv",
+      "bytes": 408,
+      "sha256": "2fd0dc7378e03ec7276f799e5ba98f175f69292575cad8b9cbbbd9761f4bb497"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/fixtures_2026_round32.csv",
+      "bytes": 879,
+      "sha256": "024aea415fd3380ae11a7da5945e6d7b88c640e7bbc5497edce7d6af8f637ba6"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/fifa_men_live_2026.csv",
+      "bytes": 2091,
+      "sha256": "72da8497cb5703eb333c26b40fe4513c474f5f46a4052ba31716b02c8d39f4be"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/fifa_men_live_2026_metadata.json",
+      "bytes": 322,
+      "sha256": "f7be38805909526dec494c2f1acbc8a1361cdc2268b9addc016345c8c082cd4c"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2014-brazil-matches-2014-to-2014-stats.csv",
+      "bytes": 20862,
+      "sha256": "6500238259c833619d4e8935f51a65147610f24bd7202ad4c7388669e508ad91"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2018-russia-matches-2018-to-2018-stats.csv",
+      "bytes": 20485,
+      "sha256": "a885753e5a4d7e20026693960ab5950842cc136d585853de69600f3827e37502"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-fifa-world-cup-2022-qatar-matches-2022-to-2022-stats.csv",
+      "bytes": 21752,
+      "sha256": "00f5d3ce2f48df6ec9803e8ea977bc595a749fc9f1bba8b0c65e0555397f8ca5"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-africa-matches-2026-to-2026-stats.csv",
+      "bytes": 79080,
+      "sha256": "97a5b54fc88e1e4735806c9f8eabd0a068055dba2839f5d00a64100416121518"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-asia-matches-2026-to-2026-stats.csv",
+      "bytes": 65991,
+      "sha256": "33119e4ff41bc3f56490cc2ff91d521168485e22894b8638bcb3ffeb72b1400d"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-concacaf-matches-2026-to-2026-stats.csv",
+      "bytes": 30366,
+      "sha256": "d902fd49ac65bd85676784690a2eb8601e23c27e7ef14e7003e1065e61f18003"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-europe-matches-2026-to-2026-stats.csv",
+      "bytes": 60268,
+      "sha256": "9dea86dc19b9117d6444ccc2040ad2f830cd06ca2405395eb92b3715382a2892"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-oceania-matches-2026-to-2026-stats.csv",
+      "bytes": 6535,
+      "sha256": "d24e288e9ac4cdb03409eb4e9c5915ce7a3be1bf7f71f58c57e361bd370bdf3e"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-wc-qualification-south-america-matches-2023-to-2026-stats.csv",
+      "bytes": 28162,
+      "sha256": "e426fae7cfcb5da8fcfdef68a0ef84cd045db276d34eb287dfc6837aa9cf0c5b"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/international-world-cup-matches-2026-to-2026-stats.csv",
+      "bytes": 26775,
+      "sha256": "aa5385805606a2bf074ddc6a27fa88c2b4eb3629ace52ded2ad1531f06d30106"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/data/raw/WorldCup2026.xlsx",
+      "bytes": 143990,
+      "sha256": "777652ce1a400aabbbb5778f306311f36197b7e382ff87d5077b5a017473ae72"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/backtest_poisson_blend.py",
+      "bytes": 6330,
+      "sha256": "e909ba59995ad49053b6a5998e5c660924258d91fbde6f0af0d22ad03bbb42a2"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/compare_improvements.py",
+      "bytes": 18243,
+      "sha256": "1a23bd9f9272eb8a3243f90cd9c9a4c74c4e69a785d59ec57a18e55c268a5c2c"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/compare_models_round32.py",
+      "bytes": 7020,
+      "sha256": "e8387b7c4858dd5d38153af850a5c6fa6ebf188592459cdb0d815d91563234a7"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/export_platform_predictions_xlsx.mjs",
+      "bytes": 3169,
+      "sha256": "4f82733006f140114831af31b8c3f750c38c1c6893a10a87f721ae2ed3430cfb"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/export_poisson_predictions_xlsx.mjs",
+      "bytes": 2793,
+      "sha256": "1c23a32356c613964813a1f75b1dae0e315a2b63c95a30e8c122542449315f66"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/predict_2026.py",
+      "bytes": 2579,
+      "sha256": "faec89407d67bd885289477ff21cafccf9b5c261d213cf6ee62a10434597eb67"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/predict_platform_2026.py",
+      "bytes": 5739,
+      "sha256": "a132d9cd399bf21adb5197af4d48a4e55bb58827b5adbc7533e26f172f665667"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/predict_poisson_2026.py",
+      "bytes": 3177,
+      "sha256": "dc11385707b9846288cc06656401c80923a33f3feb9381be2605e32313689c01"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/predict_with_qualifier_xg.py",
+      "bytes": 11744,
+      "sha256": "cd2e2334df7049ee6c74e33634b0b624a5c3fdd067135f3811c8db18d09153ca"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/prepare_poisson_training_data.py",
+      "bytes": 3397,
+      "sha256": "866ed9aa22862b914132760333b0b446ebb3ba14db0d9d6ecc8b5a18cbe1a9b1"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/refresh_2026_fixtures.py",
+      "bytes": 3129,
+      "sha256": "296651a7c6416781d154054d379e4d70a941e34b9df73a8ae56f01e4a8b1bddf"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/refresh_all_fixtures_2026.py",
+      "bytes": 5516,
+      "sha256": "69832e402d329c37ac1ddd4cef5aa19c1bbd96ece601aadc79e4dfe0cb1f95ed"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/refresh_fifa_live_rankings.py",
+      "bytes": 3133,
+      "sha256": "c5923202e8bbc390748701f2654443fb1f42ef7205da213ef7add34437209954"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/run_pipeline.py",
+      "bytes": 4741,
+      "sha256": "b5c116a4fdbab2c76f5bc481bfd58a7667e108a78d3e8b43b606cb8742236ab2"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/test_qualifier_features.py",
+      "bytes": 4564,
+      "sha256": "498e810ba224512a89ac03d2fb0d081d324e3ff46fe4a096651d71b096433920"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/train_poisson_model.py",
+      "bytes": 2346,
+      "sha256": "95c0a90b02adae4b4d84befb5022ce94edaf614f99a56341bc4538bb46428942"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/scripts/update_fifa_ratings.py",
+      "bytes": 2141,
+      "sha256": "fb17ebf183c9d47d901946879a4da27206a613bce44474ef88e12594368903a2"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/__init__.py",
+      "bytes": 31,
+      "sha256": "ce5970c7c3a943934f3eb47cc0bc6869cb0b1905387e8c1357bd0293d8082fdd"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/blend_backtest.py",
+      "bytes": 6312,
+      "sha256": "ba8a52f5cdfb087026a65e6ab3d988a99dd2bb3027dc1dd99ebe52c024c45057"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/historical_poisson.py",
+      "bytes": 6381,
+      "sha256": "cfe30a89f8a24c48bd2f3ce09089d3064f92858c0164762fcdfc481179e53c1f"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/international_training_data.py",
+      "bytes": 16711,
+      "sha256": "391b591b9be071f1551eb3cfa8a34acde639d32197948e3ec88465fca4cbe3be"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/ml_ensemble.py",
+      "bytes": 6174,
+      "sha256": "5898c7f61e4df8359a2e7cfbf241228b1cc496b65d340debc5ad4830d646a6ee"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/platform_prediction.py",
+      "bytes": 3208,
+      "sha256": "e7310eb028e2e36624331e979d34195198b8abe3c886ece1c2b744683bd55f7d"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/player_features.py",
+      "bytes": 10776,
+      "sha256": "cfc4e8087a2f68756f169852e04186f9d36a32cff0a5678e12c9788125d6606f"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/player_poisson.py",
+      "bytes": 14609,
+      "sha256": "708d5c773bc55ab01adc0d189b2bf4b09356a8b1772863a42447f82551e27863"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/poisson_model.py",
+      "bytes": 13245,
+      "sha256": "07d9b90bcccc56317c4970534fc6e3b3c15e0fdf364f5303640eac0af48677b7"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/team_names.py",
+      "bytes": 643,
+      "sha256": "c67146d7c4f1f5d2e558d3bf6a1850bbf7d43776a35f65912c7236acb5c5b503"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/src/world_cup_model.py",
+      "bytes": 33332,
+      "sha256": "d387e5dc750e20bf531b1d765006b3f582ce356b138e2715c69e582d16cc9709"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/test_historical_backtest.py",
+      "bytes": 1572,
+      "sha256": "b96ea49d2703b1fab1f304af0ebae45ba7a169d6158c55342e9a6bb92766a036"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/test_international_training_data.py",
+      "bytes": 5247,
+      "sha256": "6284d572b5069bc2b9370fb4d3360f3c1f8cbab12043b0fcdbb6d98acb7fa19d"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/test_platform_prediction.py",
+      "bytes": 757,
+      "sha256": "062f8c16dbf3aba743a65b30fe4d1a8fb36f8cbc90f644523ce11256d5062e17"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/test_poisson_model.py",
+      "bytes": 2120,
+      "sha256": "3b194877e5c63f412fa825d0f103964754921d5dbdbf0f5c1149ed6b1d72b9da"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/tests/test_world_cup_model.py",
+      "bytes": 1884,
+      "sha256": "f3de1f357b1e1d341d228c5885d28214b28788a4f42ee0d78388e2492e695abc"
+    },
+    {
+      "scope": "github_main",
+      "path": "world_cup/world_cup_rankings_4_sheets_simple.xlsx",
+      "bytes": 8174,
+      "sha256": "8d6ffb0b73fb3928d9417400a9396d02cdd09004c737abae27e6e7a6b606f3cc"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/[Group26] FYP I Literature Review.docx",
+      "bytes": 27894,
+      "sha256": "a1c6771c1c13bb0ecb23b79c306a369dc22eba61090f3e87ff12cae9822a7a0a"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献/Effectiveness_of_FIFACoca-Cola_World_Ranking_in_Pr.pdf",
+      "bytes": 338735,
+      "sha256": "81216ec5da746c7b3faffcdf4303cd0a98031ec17c45cb629cc2bb1ad0ce0c5b"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献/Wunderlich_2016_Analysis-of-the-predictive-qualities-of-betting-odds-and-FIFA-World-Ranking.pdf",
+      "bytes": 932401,
+      "sha256": "ecaec417baf9b3fa9e9c7ba991a2eb7bc4d04bcd719c8c01d14bf1deba59e8d7"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献/积分计分规则.pdf",
+      "bytes": 540462,
+      "sha256": "86b03613878996ebb9b250f5a322b1538d557644144511a87e1270c09466b8ae"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献笔记/effectiveness_fifa_ranking_world_cup.md",
+      "bytes": 4111,
+      "sha256": "cd6d91e6ac24264ea8905b08947e524d82726e31c72b8d460535111d975634b1"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献笔记/fifa_coca_cola_ranking_rules.md",
+      "bytes": 3312,
+      "sha256": "c43230ae2d74f52895a7f28c259142587e3e85b30748f35f178166c641922546"
+    },
+    {
+      "scope": "github_main",
+      "path": "要求/文献笔记/wunderlich_2016_betting_odds_fifa_ranking.md",
+      "bytes": 5391,
+      "sha256": "0851474bbf544a117832e3600ea77c22b4df8ae302aa70e5c481a2014539019f"
+    }
+  ],
+  "protected_league_files_verified": 238,
+  "mainline_files_unchanged": true,
+  "retained_literature_pdf_count": 5,
+  "retained_literature": [
+    "Data‑driven prediction of soccer outcomes .pdf",
+    "Is_Football_Unpredictable_Predicting_Matches_Using.pdf",
+    "Predicting_Football_Match_Resu.pdf",
+    "ratings.pdf",
+    "reade_singleton_scorelines.pdf"
+  ],
+  "unit_tests": {
+    "protocol": 5,
+    "fusion": 12,
+    "temporal_features": 5,
+    "total": 22,
+    "passed": true
+  }
+}

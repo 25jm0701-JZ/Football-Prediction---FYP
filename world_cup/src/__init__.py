@@ -1,1 +1,0 @@
-# World Cup prediction package

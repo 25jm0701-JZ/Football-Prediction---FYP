@@ -128,5 +128,15 @@
     "removed_redundant_descriptive_metadata": true,
     "model_files_unchanged": true,
     "numerical_result_audit_passed": true
+  },
+  "scope_cleanup": {
+    "date": "2026-10-15",
+    "description": "Retired international-tournament exploration; retained English-league study.",
+    "report": "docs/world_cup_cleanup_20261015.md",
+    "local_backup_verified": true,
+    "removed_github_files": 63,
+    "mainline_files_unchanged": true,
+    "protected_league_files_verified": 238,
+    "unit_tests_passed": 22
   }
 }

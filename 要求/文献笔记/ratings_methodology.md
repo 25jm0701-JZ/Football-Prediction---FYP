@@ -184,10 +184,10 @@ bookmaker odds > model fair odds => potential value bet
 - 模型评价可以结合 bookmaker odds 和 ROI，而不仅是 accuracy。
 - 需要注意 draw outcome 和 extreme ratings 的预测困难。
 
-如果后续项目要预测世界杯或联赛结果，可以把这篇的方法作为 baseline:
+如果后续项目要预测联赛结果，可以把这篇的方法作为 baseline:
 
 ```text
 recent goal difference rating -> match rating -> historical probability mapping -> fair odds / predicted probabilities
 ```
 
-然后再与 Elo、FIFA ranking、Poisson model、机器学习模型进行比较。
+然后再与 Elo、Poisson model、机器学习模型进行比较。
